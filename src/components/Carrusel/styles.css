@@ -1,0 +1,76 @@
+.contGralCarrusel{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+.cont-img-btns{
+    position: relative;
+}
+.btn-carrusel-prev, .btn-carrusel-next{
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    display: flex;
+    justify-content: center;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    color: rgb(9, 9, 9);
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 2;
+}
+.btn-carrusel-prev{
+    left: 10px;
+}
+.img-carrusel{
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+    border-radius: 10px 10px 0 0;
+}
+.btn-carrusel-next{
+    right: 10px;
+}
+.cont-imgs-peq {
+    width: 100%;
+    height: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    overflow-x: auto; /* Hace que la barra de desplazamiento aparezca si el contenido es más grande que el contenedor */
+    white-space: nowrap; /* Evita que las imágenes bajen a la siguiente línea */
+}
+.cont-imgs-peq img {
+    width: 160px;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+.cont-imgs-peq img.active {
+    opacity: 20%;
+}
+/* modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);    
+    z-index: 2;
+}
+
+/* responsive */
+@media screen and (max-width: 650px){
+    .img-carrusel{
+        height: 300px;
+    }
+}

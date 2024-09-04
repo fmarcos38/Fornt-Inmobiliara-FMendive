@@ -1,0 +1,257 @@
+nav {
+    /* position: fixed;
+    top: 0;
+    left: 0; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 5rem;
+    /* z-index: 1; */
+}
+/* cont nav Sup */
+.navSup{
+    width: 100%;
+    height: 2rem;
+    display: flex;
+    justify-content: center;    
+    align-items: center;
+    background-color: var(--background-color);
+}
+.redes{
+    width: 80%;
+    height: 2.5rem;
+    display: flex;
+    justify-content: center;    
+    align-items: center;
+    color: var(--primary-color);
+}
+.col1 {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: start;    
+    align-items: center; /* Color de fondo para visualización */
+}
+.navSup .redes .col1 p {
+    font-size: small;
+}
+
+.col2 {
+    display: flex;
+    justify-content: end;    
+    align-items: center;
+    flex-grow: 1; /* La segunda columna ocupará el espacio restante */
+    height: 100%; /* Color de fondo para visualización */
+}
+.iconoInsta, .iconoWhatsApp{
+    color: var(--primary-color);
+    font-size: large;
+}
+
+/* cont nav inferior menu */
+.navInf{
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    justify-content: center;    
+    align-items: center;
+    background-color: var(--background-color);
+}
+.cont-nav-inf{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 3.5rem;
+}
+/* col 1 */
+.colInf-1{
+    display: flex;
+    justify-content: start;    
+    align-items: center;
+    height: 3.5rem;
+}
+.texto-inmobiliaria{
+    font-size: 20px;
+    margin-left: 3px;
+}
+/* col2 */
+.colInf-2{
+    display: flex;
+    justify-content: center;    
+    align-items: center;
+    height: 3.5rem;
+}
+.ul-menu-izq{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+li {
+    list-style: none;
+    margin-right: 1.5rem;
+    color: black;
+    font-size: 20px;
+    font-weight: 600;
+}
+/* quito line y cambio color etiqtas a y Link */
+a, Link{
+    color: var(--primary-color);
+    text-decoration: none;
+}
+/* col 3 */
+.colInf-3{
+    display: flex;
+    justify-content: end;    
+    align-items: center;
+    height: 3.5rem;
+}
+
+/* menu hambur pantalla chica*/
+.menu-icon span {
+    width: 100%;
+    height: 3px;
+    background-color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+.menu-icon.open span:nth-child(2) {
+    opacity: 0;
+}
+.menu-icon.open span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.menu-icon.open span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+.menu-desplegable {
+    position: absolute;
+    top: 64px;
+    right: 0;
+    background: rgb(41, 40, 40);
+    width: 200px;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    z-index: 3;
+}
+.menu ul {
+    list-style: none;
+    padding: 0;
+}
+.menu li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+.link-navbar{
+    color: var(--primary-color);
+    text-decoration: none;
+}
+.menu li:hover {
+    background: var(--background-color);
+}
+.items-pChica{
+    margin: 10px 0 10px 0;
+}
+
+/* responsive */
+@media screen and (max-width: 1200px) {
+    .menu-icon {
+        display: none;
+    }
+    .texto-inmobiliaria {
+        font-size: 17px;
+    }
+    .cont-nav-inf{ /* usando flexbox */
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .colInf-2 {
+        flex: 1;
+        min-width: 300px;
+    }
+    .ul-menu-izq {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    li {
+        list-style: none;
+        font-size: 17px;
+        font-weight: 500;
+    }
+}
+
+@media screen and (max-width: 950px){    
+    nav{
+        height: 4rem;
+    }
+    .navSup{
+        height: 1.5rem;
+    }
+    .iconoContact {
+        font-size: medium;
+        margin-left: 5px;
+    }
+    .navInf{
+        height: 2.5rem;
+    }
+    li {
+        list-style: none;
+        margin-right: 1.5rem;
+        color: black;
+        font-size: 15px;
+        font-weight: 450;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .colInf-2{
+        display: none;
+    }
+    .cont-nav-inf{ /* usando flexbox */
+        display: flex;
+        justify-content: space-between;
+        width: 80%;
+    }
+    .menu-icon {
+        width: 30px;
+        height: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        cursor: pointer;
+    }
+    .menu-icon span {
+        width: 100%;
+        height: 3px;
+        background-color: var(--primary-color);
+        transition: all 0.3s ease;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    /* nav Sup */
+    .navSup{
+        width: 100%;
+    }
+    .redes{
+        width: 100%;
+    }
+    .col1{
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+    }
+    .col2{
+        display: none;
+    }
+    /* nav Inf */
+    .cont-nav-inf{
+        grid-template-columns: 1fr 1fr;
+        width: 90%;
+    }
+}

@@ -1,0 +1,18 @@
+.cont-prop-Venta{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: cadetblue;
+}
+.cont-filtros-listaProps{
+    position: relative;
+    top: -35px;
+}
+
+@media screen and (max-width:700px){
+    .cont-filtros-listaProps{
+        position: relative;
+        top: 0;
+    }
+}
