@@ -1,0 +1,28 @@
+.paginacion-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .paginacion-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .paginacion-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .paginacion-info {
+    font-size: 16px;
+    color: #333;
+  }
+  

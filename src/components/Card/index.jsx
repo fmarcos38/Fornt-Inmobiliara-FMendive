@@ -10,7 +10,7 @@ import Favorito from '../Favoritos';
 
 function Card({ id, codigoReferencia, direccion, descripcion, disposicion, expensas, geoLat, geoLong, cantPisos,
         rentaTemporaria, destacadaEnWeb, baños, ubicacion, operacion, imagenes, productor, tituloPublicacion,
-        supTechada, ambientes, supSemiCub, dormitorios, unidadMedida, bañoSuit, supTotal, tipo, supDescubierta, servicios 
+        supCubierta, ambientes, supSemiCub, dormitorios, unidadMedida, supTotal, tipo, supDescubierta, servicios 
     }) {
 
     //estado para el hover

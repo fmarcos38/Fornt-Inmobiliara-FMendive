@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useState } from 'react'
 import './styles.css';
 import { propiedades } from '../../Helps/propiedades';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';

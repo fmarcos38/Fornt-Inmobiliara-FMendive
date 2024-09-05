@@ -1,21 +1,33 @@
 import axios from "axios";
 import { 
     DETALLE_PORP, FILTRA_OPERACION_TIPO,  FILTRA_PRECIO,  GET_PROPS, IS_OPEN_MODAL_PICTURE, 
-    LOADING, 
-    MUESTRA_DESTACADAS, RESET_DETALLE,   
+    LOADING, MUESTRA_DESTACADAS, RESET_DETALLE,   
 } from "./ActionsType";
 import { actual } from "../../urls";
 
 
 //trae props
-export const getProps = (limit=0, offset=0) => {
-    return async function(dispatch){
-        dispatch({type: LOADING});//loading
-        
-        const resp = await axios.get(`${actual}/propiedades?limit=${limit}&offset=${offset}`)  
-        dispatch({type: GET_PROPS, payload: resp.data});    
-    }
-};
+export const getProps = (limit, offset, operacion, tipo, precioMin, precioMax) => {
+    return async function (dispatch) {
+        dispatch({ type: LOADING }); // loading
+
+        // Construimos los parámetros dinámicamente
+        let queryParams = `?limit=${limit}&offset=${offset}`;
+
+        if (operacion) queryParams += `&operacion=${operacion}`;
+        if (tipo) queryParams += `&tipo=${tipo}`;
+        if (precioMin) queryParams += `&precioMin=${precioMin}`;
+        if (precioMax) queryParams += `&precioMax=${precioMax}`;
+
+        try {
+            const resp = await axios.get(`${actual}/propiedades${queryParams}`); 
+            dispatch({ type: GET_PROPS, payload: resp.data });
+        } catch (error) {
+            console.error('Error fetching properties:', error);
+            // Puedes manejar el error aquí si lo necesitas
+        }
+    };
+};  
 
 //filtra por operacion y tipo
 export const filtraOperacionTipo = (obj) => {
