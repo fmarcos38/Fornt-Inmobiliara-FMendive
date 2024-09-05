@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './estilos.css';
 
 function Paginacion({allProps,currentPage, onPageChange, totalPropiedades}) {
