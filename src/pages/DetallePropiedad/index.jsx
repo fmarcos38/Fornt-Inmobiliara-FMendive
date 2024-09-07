@@ -1,22 +1,28 @@
 import React, { useContext, useEffect, useState } from 'react';
-import './estilos.css';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { detalleProp, resetDetalle } from '../../Redux/Actions';
+import { getProperty, resetProperty } from '../../Redux/Actions';
+import { InmobiliariaContext } from '../../Context';
 import Carrusel from '../../components/Carrusel';
 import MapProp from '../../components/MapaProp';
 import FormularioContacto from '../../components/FormularioContacto';
-import { InmobiliariaContext } from '../../Context';
 import ModalVideo from '../../components/ModalVideo';
 import OndemandVideoIcon from '@mui/icons-material/OndemandVideo';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import './estilos.css';
 
 
 function DetalleProp(){
 
-    const detalle_prop = useSelector(state => state.detalleProp);//propiedades[0];
-    const dispatch = useDispatch();
     const { id } = useParams();  //let id = props.match.params.id 
+    const propiedad = useSelector(state => state.propiedad);
+    //obt el tipo de operacion de la prop
+    //obt el tipo de moneda
+    const moneda =  propiedad?.operacion?.[0]?.precios?.[0]?.moneda; 
+    //otengo el precio de la prop
+    const precio =  propiedad?.operacion?.[0]?.precios?.[0]?.precio; 
+
+    const dispatch = useDispatch();    
     const contexto = useContext(InmobiliariaContext); 
     //estado para el tooltipText
     const [showTooltipVideo, setShowTooltipVideo] = useState(false);
@@ -44,9 +50,9 @@ function DetalleProp(){
     
 
     useEffect(() => {
-        dispatch(detalleProp(id));
+        dispatch(getProperty(id));
 
-        return () => { dispatch(resetDetalle()); }
+        return () => { dispatch(resetProperty()); }
     }, [dispatch, id]);
     
     
@@ -70,29 +76,31 @@ function DetalleProp(){
                             showTooltipVolver && <div className="tooltipVolver">{tooltipTextVolver}</div>
                         }
                         {/* btn-video */}
+                        <button
+                            onClick={() => contexto.handleIsOpen()}
+                            className='btn-video'
+                            onMouseEnter={handleMouseEnter}
+                            onMouseLeave={handleMouseLeave}
+                        >
+                            <OndemandVideoIcon className='icono-video' />
+                        </button>
+                        {/* msj toolTip */}
                         {
-                            detalle_prop.video && (
-                                <>
-                                    <button
-                                        onClick={() => contexto.handleIsOpen()}
-                                        className='btn-video'
-                                        onMouseEnter={handleMouseEnter}
-                                        onMouseLeave={handleMouseLeave}
-                                    >
-                                        <OndemandVideoIcon className='icono-video' />
-                                    </button>
-                                    {/* msj toolTip */}
-                                    {
-                                        showTooltipVideo && <div className="tooltip">{tooltipTextVideo}</div>
-                                    }
-                                </>
-                            )
+                            showTooltipVideo && <div className="tooltip">{tooltipTextVideo}</div>
                         }
                     </div>
                     <div className='cont-info-titulo'>
-                        <p>VENTA</p>
+                        {
+                            propiedad.operacion?.map(o => {
+                                return(
+                                    <div key={o.operacion_id}>
+                                        <p>{o.operacion}</p>
+                                    </div>
+                                )
+                            })
+                        }                        
                         <p> - </p>
-                        <p>USD {detalle_prop.precio}</p>
+                        <p>{moneda}{precio}</p>                                                
                     </div>
                 </div>
 
@@ -100,9 +108,9 @@ function DetalleProp(){
                 <div className='cont-imgs-info'>
                     <div className='info-imagenes'>
                         {
-                            detalle_prop?.imagenes
+                            propiedad?.imagenes
                                 ?
-                                <Carrusel imagenes={detalle_prop.imagenes} />
+                                <Carrusel imagenes={propiedad.imagenes} />
                                 :
                                 <p>No img</p>
                         }
@@ -113,35 +121,35 @@ function DetalleProp(){
 
                         <div className='cont-datos'>
                             <p>Ambientes: </p>
-                            <p className='dato'>{detalle_prop.ambientes}</p>
+                            <p className='dato'>{propiedad.ambientes}</p>
                         </div>
                         <div className='cont-datos'>
                             <p>Dormitorios: </p>
-                            <p className='dato'>{detalle_prop.dormitorios}</p>
+                            <p className='dato'>{propiedad.dormitorios}</p>
                         </div>
                         <div className='cont-datos'>
                             <p>Baños: </p>
-                            <p className='dato'>{detalle_prop.baños}</p>
+                            <p className='dato'>{propiedad.baños}</p>
                         </div>
                         <div className='cont-datos'>
                             <p>Sup Cubierta: </p>
-                            <p className='dato'>{detalle_prop.sup}</p>
+                            <p className='dato'>{propiedad.sup}</p>
                         </div>
                         <div className='cont-datos'>
                             <p>Sup Semicubierta: </p>
-                            <p className='dato'>{detalle_prop.sup}</p>
+                            <p className='dato'>{propiedad.sup}</p>
                         </div>
                         <div className='cont-datos'>
                             <p>Sup tot: </p>
-                            <p className='dato'>{detalle_prop.sup}</p>
+                            <p className='dato'>{propiedad.sup}</p>
                         </div>
                         <div className='cont-datos'>
                             <p>Dirección: </p>
-                            <p className='dato'>{detalle_prop.direccion}</p>
+                            <p className='dato'>{propiedad.direccion}</p>
                         </div>
                         <div className='cont-datos'>
                             <p>Barrio: </p>
-                            <p className='dato'>{detalle_prop.barrio}</p>
+                            <p className='dato'>{propiedad.barrio}</p>
                         </div>
                     </div>
                 </div>
@@ -153,7 +161,7 @@ function DetalleProp(){
                         {/* Renderizar HTML dentro de la descripción */}
                         <p
                             className='p-descrip'
-                            dangerouslySetInnerHTML={{ __html: detalle_prop.descripcion_Detalle }}
+                            dangerouslySetInnerHTML={{ __html: propiedad.descripcion }}
                         />
                     </div>
                     {/* formulario contacto */}
@@ -165,7 +173,10 @@ function DetalleProp(){
                 {/* google map */}
                 <div className='cont-map'>
                     <p>Ubicacion Propiedad</p>
-                    <MapProp direccionProp={detalle_prop.direccion}/>
+                    <MapProp 
+                        lat={propiedad.geoLat} 
+                        lng= {propiedad.geoLong}
+                    />
                 </div>
 
                 {/* Modal Video */}

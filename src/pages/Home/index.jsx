@@ -17,7 +17,7 @@ function Home() {
     const dispatch = useDispatch();
 
     const [currentPage, setCurrentPage] = useState(1);  // Estado para la página actual
-    const propiedadesPorPagina = 4;  // Definimos el límite de propiedades por página
+    const propiedadesPorPagina = 20;  // Definimos el límite de propiedades por página
 
     
     useEffect(() => {

@@ -1,15 +1,15 @@
-import React, { useState } from 'react'
-import './styles.css';
-import { propiedades } from '../../Helps/propiedades';
-import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { isOpenModalPicture } from '../../Redux/Actions';
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import Modal from '../../components/Modal';
+import './styles.css';
+import CarruselImgPequeñas from '../CarruselImgPequeñas';
+
 
 function Carrusel({imagenes}) {
 
-    const prop = propiedades[0];
     const [indexImgActual, setIndexImgActual] = useState(0);
     const dispatch = useDispatch();    
     const isOpen = useSelector(state => state.isOpenModalPicture);
@@ -21,7 +21,7 @@ function Carrusel({imagenes}) {
         }
     };
     const handleClickNext = () => {
-        if(indexImgActual === prop.imagenes.length -1){ return }
+        if(indexImgActual === imagenes.length -1){ return }
         else{
             setIndexImgActual(indexImgActual + 1);
         }
@@ -43,7 +43,7 @@ function Carrusel({imagenes}) {
                 </button>
 
                 {/* imagen a mostrar */}
-                <img src={prop.imagenes[indexImgActual]} alt='' className='img-carrusel' onClick={() => handleOpenModal()}/>
+                <img src={imagenes[indexImgActual].original} alt='' className='img-carrusel' onClick={() => handleOpenModal()}/>
 
                 {/* btn prox */}
                 <button className='btn-carrusel-next' onClick={() => handleClickNext()}>
@@ -53,24 +53,18 @@ function Carrusel({imagenes}) {
 
             {/* cont imagenes pequeñas */}
             <div className='cont-imgs-peq'>
-            {
-                prop.imagenes.map((img, index) => (
-                    <img
-                        key={index}
-                        src={img} 
-                        alt={`Thumbnail ${index}`}
-                        className={index === indexImgActual ? "active" : ""}
-                        onClick={() => handleClick(index)}
-                    />
-                ))
-            }
+                <CarruselImgPequeñas 
+                    imagenes={imagenes}
+                    indexImgActual={indexImgActual}
+                    handleClick={handleClick}
+                />
             </div>
 
             {/* Modal img */}
             {
                 isOpen && (
                     <div className='modal-overlay'>
-                        <Modal /* imgProp={prop.imagenes[indexImgActual]} */imagenes={prop.imagenes}/>
+                        <Modal /* imgProp={prop.imagenes[indexImgActual]} */imagenes={imagenes}/>
                     </div>
                 )
             }

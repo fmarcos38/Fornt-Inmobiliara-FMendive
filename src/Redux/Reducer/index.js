@@ -1,13 +1,13 @@
 import { 
-    DETALLE_PORP, GET_PROPS, IS_OPEN_MODAL_PICTURE, LOADING, RESET_DETALLE,   
+    GET_PROPERTY, GET_PROPS, IS_OPEN_MODAL_PICTURE, LOADING,  RESET_PROPERTY,   
 } from "../Actions/ActionsType";
 
 const initialState = {
     propiedades: [],
     totPropiedades: 0,
+    propiedad: {},
     tipoOp: [],
     loading: true,
-    detalleProp: {},
     isOpenModalPicture: false,
 };
 
@@ -26,17 +26,15 @@ export default function rootReducer (state = initialState, action) {
                 propiedades: action.payload.propiedades,
                 totPropiedades: action.payload.total,
             };
-        case DETALLE_PORP:
-            const arrProp = [...state.propiedades]; 
-            let det_prop = arrProp.find(p => p.id === action.payload);            
+        case GET_PROPERTY:
             return{
                 ...state,
-                detalleProp: det_prop
+                propiedad: action.payload,
             };
-        case RESET_DETALLE:
+        case RESET_PROPERTY:
             return{
                 ...state,
-                detalleProp: {}
+                propiedad: {}
             };
         case IS_OPEN_MODAL_PICTURE:
             return{

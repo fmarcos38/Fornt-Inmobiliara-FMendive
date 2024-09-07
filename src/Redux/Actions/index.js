@@ -1,7 +1,6 @@
 import axios from "axios";
 import { 
-    DETALLE_PORP, FILTRA_OPERACION_TIPO,  FILTRA_PRECIO,  GET_PROPS, IS_OPEN_MODAL_PICTURE, 
-    LOADING, MUESTRA_DESTACADAS, RESET_DETALLE,   
+    GET_PROPERTY,  GET_PROPS, IS_OPEN_MODAL_PICTURE, LOADING, MUESTRA_DESTACADAS, RESET_PROPERTY,   
 } from "./ActionsType";
 import { actual } from "../../urls";
 
@@ -29,10 +28,22 @@ export const getProps = (limit, offset, operacion, tipo, precioMin, precioMax) =
     };
 };  
 
-//filtra por operacion y tipo
-export const filtraOperacionTipo = (obj) => {
-    return function(dispatch){
-        dispatch({type: FILTRA_OPERACION_TIPO, payload: obj});
+//trae propiedad por ID
+export const getProperty = (id) => {
+    return async function(dispatch) {
+        try {
+            const resp = await axios.get(`${actual}/propiedades/${id}`);
+            dispatch({type: GET_PROPERTY, payload: resp.data});
+        } catch (error) {
+            console.log(error);
+        }
+    }
+};
+
+//reset detalle
+export const resetProperty = () => {
+    return function(dispatch) {
+        dispatch({ type: RESET_PROPERTY });
     }
 };
 
@@ -43,19 +54,8 @@ export const muestraDestacadas = (obj) => {
     }
 };
 
-//detalle prop
-export const detalleProp = (id) => {
-    return function(dispatch){
-        dispatch({type: DETALLE_PORP, payload: id});
-    }
-};
 
-//reset detalle
-export const resetDetalle = () => {
-    return function(dispatch) {
-        dispatch({ type: RESET_DETALLE });
-    }
-};
+
 
 //cierra Modal imagen prop
 export const isOpenModalPicture = () => {
@@ -63,10 +63,3 @@ export const isOpenModalPicture = () => {
         dispatch({type: IS_OPEN_MODAL_PICTURE});
     }
 };
-
-//filtra por precio min y max
-export const filtraPrecio =(data) => {
-    return function(dispatch){
-        dispatch({type: FILTRA_PRECIO, payload: data});
-    }
-}

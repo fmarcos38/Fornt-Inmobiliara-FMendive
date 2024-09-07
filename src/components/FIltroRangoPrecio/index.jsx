@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { filtraPrecio } from '../../Redux/Actions';
+import {  } from '../../Redux/Actions';
 import './styles.css';
 
 const FiltraPrecio = ({operacion}) => {
@@ -21,13 +21,13 @@ const FiltraPrecio = ({operacion}) => {
     /* para btn aplicar filtro precio */
     const handleClickFiltroPrecio = () => {
         dispatch(
-            filtraPrecio(
+            /* filtraPrecio(
                 {
                     min: minPrice,
                     max: maxPrice,
                     operacion: operacion
                 }                
-            )
+            ) */
         );
     };
 
