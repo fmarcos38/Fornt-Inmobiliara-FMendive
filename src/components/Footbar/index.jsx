@@ -1,9 +1,10 @@
 import React from 'react';
-import './styles.css';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-import Logo from '../../Imagenes/Logo-Flor-2.jpg';
 import { Link } from 'react-router-dom';
+import IconoInstagram from '../../Imagenes/icononInstagram.png';
+import IconoWhatsApp from '../../Imagenes/iconoWhatsApp.png';
+import Logo from '../../Imagenes/LogoHome.png';
+
+import './styles.css';
 
 function Footbar() {
     return (
@@ -18,23 +19,29 @@ function Footbar() {
                         {/* Contactanos */}
                         <li>
                             <h2>
-                                <p>CONTACTANOS</p>
+                                <p className='titulo-col-foot'>Encontranos en</p>
                             </h2>
-                            <p>
+                            <p className='info-contactos'>
                                 Belgrano 2214 - Mar del Plata
-                                <br></br>
-                                Teléfono (0223) 4915977
-                                <br></br>
-                                Whatsapp +54 9 (223) 6349596
-                                <br></br>
-                                info@belluccipropiedades.com
-                                <br></br>
                             </p>
+
+                            <p className='info-contactos'>
+                                Teléfono (0223) 4915977
+                            </p>
+
+                            <p className='info-contactos'>
+                                Whatsapp +54 9 (223) 6349596
+                            </p>
+
+                            <p className='info-contactos'>
+                                info@belluccipropiedades.com
+                            </p>
+
                         </li>
                         {/* Links */}
                         <li>
                             <h2>
-                                <p>Links</p>
+                                <p className='titulo-col-foot'>Links</p>
                             </h2>
                             <div className='divLinks'>
                                 <Link to={'/venta'} className='link-footbar'>Ventas</Link>
@@ -46,19 +53,28 @@ function Footbar() {
                         </li>
                         {/* Redes */}
                         <li>
-                            <h2><p>Seguinos</p></h2>
+                            <h2>
+                                <p className='titulo-col-foot'>Seguinos</p>
+                            </h2>
                             <div className='cont-iconos-redes'>
                                 <a href='https://www.instagram.com/florm.bienesraices/'>
-                                    <InstagramIcon className='icono-redes-foot' />
+                                    <img src={IconoInstagram} alt='' className='icono-redes-foot'/>
                                 </a>
                                 <a href='http://api.whatsapp.com/send?phone=2234422665'>
-                                    <WhatsAppIcon className='icono-redes-foot' />
+                                <img src={IconoWhatsApp} alt='' className='icono-redes-foot'/>
                                 </a>
                             </div>
                         </li>
                     </ul>
                 </div>
-            </div>         
+            </div>    
+            
+            <div className='cont-info-derechos'>
+                <p className='info-derechos'>
+                    Todas las medidas enunciadas son meramente orientativas, las medidas exactas serán las que se expresen en el respectivo título de propiedad de cada inmueble. Todas las fotos, imagenes y videos son meramente ilustrativos y no contractuales. Los precios enunciados son meramente orientativos y no contractuales..
+                    © 2024 Mendive Negocios Inmobiliario.
+                </p>
+            </div>
         </footer>
     )
 }

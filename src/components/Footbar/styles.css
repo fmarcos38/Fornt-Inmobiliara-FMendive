@@ -8,7 +8,7 @@
     flex-direction: column;
     justify-content: center;  
     align-items: center;
-    background-color: black;
+    background-color: var(--color-negro-logo);
 }
 .footer {
     width: 80%;
@@ -27,43 +27,42 @@ footer ul {
     width: 100%;
 }
 .logo-footbar {
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
+    width: 150px;
+    height: 150px;
 }
 footer ul li {
     display: inline-block;
     position: relative;
     width: 35%;
 }
-/* color linea sup */
+/* color linea sup y titulo*/
 footer ul li h2 {
     display: block;
     margin-bottom: 3px;
+    font-size: 18px;
+    font-weight: 200;
+    color: var(--primary-color);
     border-bottom: 1px solid var(--primary-color);
 }
-footer ul li h4 p {
-    display: inline-block;
-    position: relative;
-    overflow: hidden;
-    font-size: .833vw;
-    line-height: .9vw;
-    text-transform: uppercase;
-    font-weight: 800;
-    vertical-align: middle;
-}
-/* color letras */
-footer ul li p {
-    display: block;
+/* textos contáctenos */
+.info-contactos{
+    margin: 3px 0 3px 0;
+    font-size: 17px;
+    font-weight: 200;
     color: var(--primary-color);
-    font-size: small;
+}
+.titulo-col-foot{
+    font-size: 15px;
+    font-weight: 200;
 }
 .divLinks{
     display: flex;
     flex-direction: column;
 }
-/* color par los Link */
+/* textos Link */
 .link-footbar{
+    font-size: 15px;
+    font-weight: 200;
     color: var(--primary-color);
 }
 .contTodasMedidas{
@@ -78,12 +77,20 @@ footer ul li p {
     margin-top: 10px;
     width: 100%; /* Ancho de la línea */
     height: 1px; /* Grosor de la línea */
-    background-color: var(--primary-color); /* Color de la línea */
-    
+    background-color: var(--primary-color); /* Color de la línea */    
     margin-bottom: 5px;
 }
 .icono-redes-foot{
-    font-size: xx-large;
+    width: 50px;
+    height: 50px;
+}
+.cont-info-derechos{
+    width: 80%;
+    border-top: 1px solid var(--primary-color);
+}
+.info-derechos{
+    font-size: 12px;
+    color: var(--dorado-oscuro);
 }
 
 @media screen and (max-width: 900px){

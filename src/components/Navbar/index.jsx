@@ -24,11 +24,11 @@ function NavbarConRedes() {
                 <div className='redes'>
                     <div className='col1'>
                         <img src={IconoUbicacion} alt='ubi' className='iconoInstaNew'/>
-                        <p>Sarmiento 2323</p>
+                        <p className='texto-barra-sup'>Sarmiento 2323</p>
                         <LocalPhoneIcon className='iconoContact'/>
-                        <p>2234422665</p>
+                        <p className='texto-barra-sup'>2234422665</p>
                         <img src={IconoMail} alt='ubi' className='iconoInstaNew'/>
-                        <p>florm@gmail.com</p>
+                        <p className='texto-barra-sup'>florm@gmail.com</p>
                     </div>
 
                     <div className='col2'>

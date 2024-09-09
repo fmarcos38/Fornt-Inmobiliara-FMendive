@@ -1,6 +1,13 @@
 :root {
-    --primary-color: rgba(171, 132, 94, 1);
-    --color-negro-logo: rgba(28, 28, 28, 1);
+    --primary-color: rgba(238, 198, 142, 1);
+    --dorado-oscuro: rgba(171, 132, 94, 1);
+    --color-negro-logo: rgba(10, 34, 42, 1);
 }
 
-
+body {
+    font-family: "Archivo", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}

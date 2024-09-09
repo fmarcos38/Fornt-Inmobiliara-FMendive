@@ -6,13 +6,18 @@
   width: 100%;
   height: auto;
   border-radius: 0 10px 10px 0;
-  background-color: rgba(209, 211, 211, 0.74);
+  border: 2px solid var(--primary-color);
+
 }
 /* est. 1er div */
 .cont-titulo-filtro {
+  height: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 8px;
+  border-radius: 10px 10px 0 0;
+  border-bottom: 2px solid var(--primary-color);
 }
 .cont-titulo-filtro > p {
   width: 100%;
@@ -25,15 +30,26 @@
 }
 /* estilos 2do div */
 .opc-venta-alq{
-  margin-bottom: 20px;
+  width: 250px;
+  align-items: center;
+  margin: 20px 0px 20px 0px;
 }
-.opc-venta-alq > label {
-  font-size: large;
+.cont-venta-alq{
+  width: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.label-filtro-tipo-operacion {
+  font-size: 20px;
   color: var(--color-negro-logo);
 }
 .input-check-venta, .input-check-alq{
   transform: scale(1.2); /* agranda el tamaño del checkbox */
   margin-left: 10px;
+}
+.input-check-venta {
+  margin-right: 10px;
 }
 /* estilos 3er div */
 .cont-btn-filtros {
@@ -47,21 +63,18 @@
 .boton-filtros {
   width: 130px;
   height: 40px;
-  color: var(--primary-color);
   padding: 5px 10px;
   margin-bottom: 5px;
-  font-weight: bold;
+  font-family: 'Reboto', sans-serif;
   cursor: pointer;
-  transition: all 0.3s ease;
-  display: inline-block;
-  outline: none;
   border-radius: 5px;
   border: none;
-  background-size: 120% auto;
-  background-image: linear-gradient(315deg, #848687 0%, #050608 75%);
+  color: var(--primary-color);
+  background-color: var(--color-negro-logo);
 }
 .boton-filtros:hover {
-  background-position: right center;
+  color: var(--color-negro-logo);
+  background-color: var(--primary-color);
 }
 .boton-filtros:active {
   top: 2px;

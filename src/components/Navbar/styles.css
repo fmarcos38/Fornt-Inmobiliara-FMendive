@@ -19,6 +19,10 @@ nav {
     align-items: center;
     background-color: var(--color-negro-logo);
 }
+/* texto nav sup */
+.texto-barra-sup{
+    color: var(--primary-color);
+}
 .redes{
     width: 80%;
     height: 2.5rem;
@@ -34,10 +38,6 @@ nav {
     justify-content: start;    
     align-items: center; /* Color de fondo para visualización */
 }
-.navSup .redes .col1 p {
-    font-size: small;
-}
-
 .col2 {
     display: flex;
     justify-content: end;    
@@ -95,12 +95,12 @@ nav {
     justify-content: center;
     align-items: center;
 }
+/* texto nav inf */
 li {
     list-style: none;
     margin-right: 1.5rem;
-    color: black;
-    font-size: 20px;
-    font-weight: 600;
+    font-size: 25px;
+    font-weight: 100;
 }
 /* quito line y cambio color etiqtas a y Link */
 a, Link{
@@ -244,27 +244,31 @@ a, Link{
     .navSup{
         width: 100%;
     }
+    .texto-barra-sup{
+        font-size: 12px;
+    }
     .redes{
         width: 100%;
     }
     .col1{
-        justify-content: center;
-        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 95%;
         height: 100%;
     }
-        /* col 1 */
-        .colInf-1 {
-            width: 30%;
-            height: 3.5rem;
-            display: flex;
-            justify-content: start;
-            align-items: center;
-            margin-left: 15px;
-        }
-    
-        .logo {
-            height: 2rem;
-        }
+    /* col 1 */
+    .colInf-1 {
+        width: 30%;
+        height: 3.5rem;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        margin-left: 15px;
+    }
+    .logo {
+        height: 2rem;
+    }
     .col2{
         display: none;
     }
