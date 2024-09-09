@@ -16,15 +16,17 @@
 }
 .sub-cont-sup{
     width: 40%;
-    height: auto;
+    height: 80px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 40px;
+    text-align: center;
+    margin-top: 30px;
     margin-left: 40px;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-    background-color: #ffffff27;
+    border-top: 2px solid var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    background-color: #2b2a2a;
 }
 
 /* para la animacion */
@@ -35,6 +37,13 @@
 }  
 .left-slide {
     animation-name: slideFromLeft;
+}
+.texto-sup{
+    margin: 0;
+    color: var(--primary-color);
+}
+.texto-sup-inf{
+    color: var(--primary-color);
 }
 .right-slide {
     animation-name: slideFromRight;
@@ -65,16 +74,22 @@
 /* estilos cont logo */
 .cont-logo-landing{
     width: 100%;
-}
-.sub-cont-logo-landing{
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.logo-landing{
-    width: 200px;
-    height: 200px;
+.sub-cont-logo-landing{
+    width: 280px;
+    height: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 50%;
+    background-color: var(--color-negro-logo);
+}
+.logo-landing{
+    width: 180px;
+    height: 180px;
     animation: fadeIn 3s ease-in-out; /* desvanecimiento */ 
     /* animation: zoom 3s infinite; */ /* zoom */
 }
@@ -107,20 +122,20 @@
 }
 .sub-cont-inf{
     width: 40%;
-    height: auto;
+    height: 80px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
     margin-right: 40px;
     margin-bottom: 40px;
-    color: #fff;
-    border-top: 1px solid rgb(252, 249, 249);
-    border-bottom: 1px solid rgb(249, 245, 245);
-    background-color: rgba(0, 0, 0, 0.347);
+    border-top: 1px solid var(--primary-color);
+    border-bottom: 1px solid var(--primary-color);
+    background-color: var(--color-negro-logo);
 }
 .texto-inf{
-    color: #fff;
+    color: var(--primary-color);
 }
 .cont-texto-socalo {
     position: absolute;
@@ -131,7 +146,7 @@
     justify-content: center;
     align-items: center;
     border-radius: 20px;
-    background-color: rgb(8, 8, 8);
+    background-color: var(--color-negro-logo);
 }
 .cont-texto-socalo p {
     color: var(--primary-color);

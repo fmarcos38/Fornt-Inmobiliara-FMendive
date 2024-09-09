@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import './estilos.css';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-
+import './estilos.css';
 
 const Favorito = ({ id }) => {
     const [isFavorite, setIsFavorite] = useState(false);

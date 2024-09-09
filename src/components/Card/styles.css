@@ -2,9 +2,8 @@
     position: relative; /* es para Al paea el mouse funcione la opcacidad y msj detalle */
     display: grid;
     grid-template-columns: 370px; /* ANCHO CARD */
-    grid-template-rows: 50px 270px 110px 80px;
+    grid-template-rows: 50px 270px 130px 100px;
     grid-template-areas: "title" "image" "info1" "info2";
-    background: white;
     /* box-shadow:  2px 5px rgba(0, 0, 0, 0.9); */
     font-family: roboto;
     text-align: center;
@@ -17,8 +16,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: rgb(6, 6, 6);
-    background-color: rgba(187, 193, 193, 0.74);
+    color: var(--primary-color);
+    background-color: var(--color-negro-logo);
     border-radius: 15px 15px 0 0;
     
 }
@@ -73,8 +72,8 @@
     flex-direction: column;
     justify-content: start;
     align-items: start;    
-    color: rgb(10, 10, 10);
-    background-color: rgb(255, 255, 255);
+    color: var(--primary-color);
+    background-color: var(--color-negro-logo);
 }
 .card-info1 .cont-info1{
     display: flex;
@@ -88,17 +87,34 @@
 .card-info1 .cont-info1 span {
     color: grey;
 }
-.card-info1 .descrip {
-    margin: 0 0 0 10px;
+.cont-titulo-publicacion{
+    width: 95%;
+    color: var(--primary-color);
+    background-color: var(--color-negro-logo);
+}
+.tituloPublicacion {
+    margin: 0;
+    background-color: var(--color-negro-logo);
 }
 .cont-precio-fav{
     width: 100%;    
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    
+    justify-content: center;
+    align-items: center; 
 }
-.card-info1 .precio{
+.cont-precio {
+    width: 50%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.cont-fav {
+    width: 50%;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+}
+.precio{
     margin-left: 10px;
     font-size: 20px;
 }
@@ -108,14 +124,17 @@
     grid-area: info2;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
     border-radius: 0 0 15px 15px;
-    background-color: rgba(187, 193, 193, 0.74);
+    background-color: #333333;
 }
 .div-info2{
     width: 100%;    
 }
 .info2 {
     margin: 3px;
+    color: var(--primary-color);
 }
 
 /* responsive */
@@ -148,3 +167,7 @@
         height: 220px;
     }
 }
+
+
+
+

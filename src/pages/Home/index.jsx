@@ -7,8 +7,8 @@ import Loading from '../../components/Loading';
 import CotizacionDolar from '../../components/CotizacionDolar';
 import BarraLateral from '../../components/Barra-Lateral';
 import WhatsAppButton from '../../components/BotonWhastApp';
-import './styles.css';
 import Paginacion from '../../components/Paginacion';
+import './styles.css';
 
 function Home() {
     const loadding = useSelector(state => state.loading);

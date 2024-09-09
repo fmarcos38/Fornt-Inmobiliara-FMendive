@@ -1,12 +1,12 @@
-import React, { useState } from 'react'
-import './styles.css'
-import LocationOnIcon from '@mui/icons-material/LocationOn';
-import iconoSup from '../../Imagenes/icono-superficie.svg';
-import iconoAmb from '../../Imagenes/icono-ambientes.svg';
-import iconoDor from '../../Imagenes/icono-dormitorios.svg';
-import iconoBañ from '../../Imagenes/icono-banos.svg';
+import React, { useState } from 'react';
+import IconoUbicacion from '../../Imagenes/iconoUbicacion.png';
 import { NavLink } from 'react-router-dom';
 import Favorito from '../Favoritos';
+import IconoSup from '../../Imagenes/Iconos/IconoSup';
+import IconoAmb from '../../Imagenes/Iconos/IconoAmb';
+import IconoDormitorio from '../../Imagenes/Iconos/IconoDormitorios';
+import IconoBaños from '../../Imagenes/Iconos/IconoBaños';
+import './styles.css'
 
 function Card({ id, codigoReferencia, direccion, descripcion, disposicion, expensas, geoLat, geoLong, cantPisos,
         rentaTemporaria, destacadaEnWeb, baños, ubicacion, operacion, imagenes, productor, tituloPublicacion,
@@ -43,24 +43,26 @@ function Card({ id, codigoReferencia, direccion, descripcion, disposicion, expen
 
             {/* info 1 */}
             <div className='card-info1'>
+                <div className='cont-titulo-publicacion'>
+                    <p className='tituloPublicacion'>{tituloPublicacion}</p>
+                </div>
                 <div className='cont-info1'>
-                    <LocationOnIcon />
+                    <img src={IconoUbicacion} alt='iconoUbi' style={{width:'30px', height:'30px'}}/>
                     <p className='direcc'>
                         Barrio: {ubicacion.barrio} |
                         Direcc: {direccion}
                     </p>
                 </div>
-                <p className='descrip'>{tituloPublicacion}</p>
 
                 <div className='cont-precio-fav'>
-                    <p className='precio'>
-                        {
-                            operacion[0].operacion === 'venta' ?
-                            <strong>USD {operacion[0].precios[0].precio}</strong> :
-                            <strong>$ {operacion[0].precios[0].precio}</strong>
-                        }
-                    </p>
-                    <Favorito id={id} />
+                    <div className='cont-precio'>
+                        <p className='precio'>
+                            <strong>USD {operacion[0].precios[0].precio}</strong>
+                        </p>
+                    </div>
+                    <div className='cont-fav'>
+                        <Favorito id={id} />
+                    </div>
                 </div>
             </div>
             
@@ -68,7 +70,7 @@ function Card({ id, codigoReferencia, direccion, descripcion, disposicion, expen
             <div className='card-info2'>
                 <div className='div-info2'>
                     <p className='info2'>
-                        <img src={iconoSup} alt='' style={{ 'width': '20px', 'height': '20px', 'color': 'black', 'marginTop': '5px' }} />
+                        <IconoSup />
                     </p>
                     <p className='info2'>Superficie</p>
                     <p className='info2'>{unidadMedida}</p>
@@ -76,7 +78,7 @@ function Card({ id, codigoReferencia, direccion, descripcion, disposicion, expen
 
                 <div className='div-info2'>
                     <p className='info2'>
-                        <img src={iconoAmb} alt='' style={{ 'width': '20px', 'height': '20px', 'marginTop': '5px' }} />
+                        <IconoAmb/>
                     </p>
                     <p className='info2'>Ambientes</p>
                     <p className='info2'>{ambientes}</p>
@@ -84,7 +86,7 @@ function Card({ id, codigoReferencia, direccion, descripcion, disposicion, expen
 
                 <div className='div-info2'>
                     <p className='info2'>
-                        <img src={iconoDor} alt='' style={{ 'width': '20px', 'height': '20px', 'marginTop': '5px' }} />
+                        <IconoDormitorio/>
                     </p>
                     <p className='info2'>Dormitorios</p>
                     <p className='info2'>{dormitorios}</p>
@@ -92,7 +94,7 @@ function Card({ id, codigoReferencia, direccion, descripcion, disposicion, expen
 
                 <div className='div-info2'>
                     <p className='info2'>
-                        <img src={iconoBañ} alt='' style={{ 'width': '20px', 'height': '20px', 'marginTop': '5px' }} />
+                        <IconoBaños />
                     </p>
                     <p className='info2'>Baños</p>
                     <p className='info2'>{baños}</p>

@@ -1,6 +1,6 @@
 import React  from 'react'
+import logo from '../../Imagenes/LogoHome.png';
 import './styles.css';
-import logo from '../../Imagenes/Logo-Flor-2.jpg';
 
 function LandingPage() {
 
@@ -10,11 +10,7 @@ function LandingPage() {
             <div className='cont-sup'>
                 <div className="sub-cont-sup left-slide">
                     <p className="texto-sup">
-                        <b>
-                            Somos una empresa con presencia en el Mercado Inmobiliario de Mar del Plata desde 1972.
-                            En estos años hemos asesorado a empresas de primer nivel Nacional e Internacional,
-                            así como a pymes y particulares
-                        </b>
+                        <b>Nos dedicamos a realizar gestiones inmobiliarias, con un enfoque en propiedades de diseño único.</b>
                     </p>
                 </div>
             </div>            
@@ -30,12 +26,8 @@ function LandingPage() {
             {/* cont texto 2 */}            
             <div className='cont-inf'>
                 <div className="sub-cont-inf right-slide">
-                    <p className="texto-inf">
-                        <b>
-                            Navegá por nuestras propiedades.
-                            Encontrá tu proximo hogar, local para tu negocio,
-                            o si estás buscando invertir, tenemos desarrollos propios.
-                        </b>
+                <p className="texto-sup-inf">
+                        <b>Creemos en la importancia de caminar juntos hacia el cumplimiento de tus objetivos, para que sientas nuestro respaldo en cada paso del proceso.</b>
                     </p>
                 </div>
             </div>

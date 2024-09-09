@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import './styles.css';
 import { Link, NavLink } from 'react-router-dom';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
+import IconoUbicacion from '../../Imagenes/iconoUbicacion.png';
+import IconoMail from '../../Imagenes/iconoMail.png';
+import IconoInsta from '../../Imagenes/icononInstagram.png';
+import IconoWhatssApp from '../../Imagenes/iconoWhatsApp.png';
+import Logo from '../../Imagenes/logoTexto.png';
+import './styles.css';
 
 
 function NavbarConRedes() {
@@ -22,20 +23,20 @@ function NavbarConRedes() {
             <div className='navSup'>
                 <div className='redes'>
                     <div className='col1'>
-                        <LocationOnIcon className='iconoContact'/>
+                        <img src={IconoUbicacion} alt='ubi' className='iconoInstaNew'/>
                         <p>Sarmiento 2323</p>
                         <LocalPhoneIcon className='iconoContact'/>
                         <p>2234422665</p>
-                        <AlternateEmailIcon className='iconoContact'/>
+                        <img src={IconoMail} alt='ubi' className='iconoInstaNew'/>
                         <p>florm@gmail.com</p>
                     </div>
 
                     <div className='col2'>
                         <a href='https://www.instagram.com/florm.bienesraices/'>
-                        <InstagramIcon className='iconoInsta'/>
+                            <img src={IconoInsta} alt='icoInsta' className='iconoInstaNew'/>                        
                         </a>
                         <a href='http://api.whatsapp.com/send?phone=2234422665'>
-                            <WhatsAppIcon className='iconoWhatsApp'/>
+                            <img src={IconoWhatssApp} alt='icoInsta' className='iconoInstaNew'/>
                         </a>
                     </div>
                 </div>
@@ -46,8 +47,7 @@ function NavbarConRedes() {
                     <div className='colInf-1'>
                         {/* logo */}                        
                         <NavLink to='/' >
-                            {/* <img src={logo} alt='img not found' className='logo' /> */}
-                            <p className='texto-inmobiliaria'><b>FM</b> Propiedades</p>
+                            <img src={Logo} alt='img not found' className='logo' /> 
                         </NavLink>
                     </div>
                     {/* menu SOLO Pantalla Grande*/}

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { getProps, } from '../../Redux/Actions';
 import './estilos.css'; 
-import FiltraPrecio from '../FIltroRangoPrecio';
+/* import FiltraPrecio from '../FIltroRangoPrecio'; */
 
 
 const BarraLateral = () => {
@@ -107,7 +107,7 @@ const BarraLateral = () => {
                 <button className='boton-filtros' id='todas'  onClick={(e) => handleClick(e)}>Todas</button>
             </div>
 
-            <FiltraPrecio operacion={operacion}/>
+            {/* <FiltraPrecio operacion={operacion}/> */}
         </div>        
     );
 };
