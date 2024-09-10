@@ -10,7 +10,7 @@ function LandingPage() {
             <div className='cont-sup'>
                 <div className="sub-cont-sup left-slide">
                     <p className="texto-sup">
-                        <b>Nos dedicamos a realizar gestiones inmobiliarias, con un enfoque en propiedades de diseño único.</b>
+                        Nos dedicamos a realizar gestiones inmobiliarias, con un enfoque en propiedades de diseño único.
                     </p>
                 </div>
             </div>            
@@ -27,7 +27,7 @@ function LandingPage() {
             <div className='cont-inf'>
                 <div className="sub-cont-inf right-slide">
                 <p className="texto-sup-inf">
-                        <b>Creemos en la importancia de caminar juntos hacia el cumplimiento de tus objetivos, para que sientas nuestro respaldo en cada paso del proceso.</b>
+                        Creemos en la importancia de caminar juntos hacia el cumplimiento de tus objetivos, para que sientas nuestro respaldo en cada paso del proceso.
                     </p>
                 </div>
             </div>

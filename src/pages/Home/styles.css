@@ -1,11 +1,12 @@
-.cont-home{  
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    height: auto;
-    margin: 0;
-    background-color: rgba(46, 44, 44, 0.634);
+.cont-home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  background-color: rgba(234, 231, 229, 1);
+  /* background-image: url('../../Imagenes/Texturas/Textura-05.jpg'); */
 }
 .cont-filtros-listaProps{
   width: 100%;

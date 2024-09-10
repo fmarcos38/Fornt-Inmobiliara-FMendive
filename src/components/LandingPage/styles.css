@@ -24,11 +24,8 @@
     text-align: center;
     margin-top: 30px;
     margin-left: 40px;
-    border-top: 2px solid var(--primary-color);
-    border-bottom: 2px solid var(--primary-color);
-    background-color: #2b2a2a;
+    background-color: var(--color-negro-logo);
 }
-
 /* para la animacion */
 .sub-cont-sup, .sub-cont-inf{
     opacity: 0; /* Inicialmente, ocultamos los textos */
@@ -38,11 +35,11 @@
 .left-slide {
     animation-name: slideFromLeft;
 }
-.texto-sup{
+.texto-sup,
+.texto-sup-inf {
     margin: 0;
-    color: var(--primary-color);
-}
-.texto-sup-inf{
+    font-size: 18px;
+    font-weight: 200;
     color: var(--primary-color);
 }
 .right-slide {
@@ -102,15 +99,7 @@
         opacity: 1;
     }
 }
-/* Animación de zoom */
-/* @keyframes zoom {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.5);
-    }
-} */
+
 
 /* estilos cont y text inf */
 .cont-inf {
@@ -130,8 +119,6 @@
     text-align: center;
     margin-right: 40px;
     margin-bottom: 40px;
-    border-top: 1px solid var(--primary-color);
-    border-bottom: 1px solid var(--primary-color);
     background-color: var(--color-negro-logo);
 }
 .texto-inf{
@@ -156,7 +143,6 @@
 @media (max-width: 950px) {
     .sub-cont-sup{
         width: 55%;
-        background-color: #dad4d488;
     }
     .logo-landing{
         width: 150px;
@@ -165,7 +151,6 @@
     .sub-cont-inf{
         width: 55%;
         margin-bottom: 40px;
-        background-color: rgba(0, 0, 0, 0.444);
     }
     .cont-texto-socalo {
         height: 45px;
@@ -193,18 +178,18 @@
     .sub-cont-sup{
         width: 90%;
         margin: 0;
-        background-color: #ffffff8e;
     }
-    .cont-logo-landing{
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    .texto-sup,
+    .texto-sup-inf {
+        font-size: 15px;
+    }
+    .sub-cont-logo-landing{
+        width: 200px;
+        height: 200px;
     }
     .logo-landing{
-        width: 150px;
-        height: 150px;
-
+        width: 100px;
+        height: 100px;;
     }
     .cont-inf {
         width: 100%;
@@ -216,7 +201,6 @@
     .sub-cont-inf{
         width: 90%;
         margin-right: 0;
-        background-color: rgba(0, 0, 0, 0.667);
     }
     .cont-texto-socalo {
         width: 70%;

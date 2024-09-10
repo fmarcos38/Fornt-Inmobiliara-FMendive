@@ -43,7 +43,7 @@ const BarraLateral = () => {
                 //dispatch(getProps(0, 0, operacion, 'destacadaEnWeb'))//ver tema destacada
                 break;
             case 'todas':
-                dispatch(getProps());
+                dispatch(getProps(0, 0,));
                 break;
             default:
                 break;
@@ -52,7 +52,7 @@ const BarraLateral = () => {
 
     useEffect(() => {        
             if(operacion === ''){ 
-                dispatch(getProps()); 
+                dispatch(getProps(0, 0,)); 
             }
             if(operacion !== ''){ 
                 dispatch(getProps(0, 0, operacion));                
@@ -62,14 +62,13 @@ const BarraLateral = () => {
     return (
         <div className='cont-barra' >
             <div className='cont-titulo-filtro'>
-                <p>Filtros Propiedades</p>
+                <p className='titulo-filtros'>Filtros Propiedades</p>
             </div>
 
             <div className='opc-venta-alq'>
                 <div className='cont-venta-alq'>
                 <label className='label-filtro-tipo-operacion'>VENTA</label>
-                <input 
-                    id='Venta'
+                <input id='Venta'
                         type="checkbox" 
                         value="Venta" 
                         checked={operacion === 'Venta'} 
@@ -77,8 +76,7 @@ const BarraLateral = () => {
                         className='input-check-venta'
                     />
                 <label className='label-filtro-tipo-operacion'>ALQUILER</label>
-                <input 
-                    id='Alquiler'
+                <input id='Alquiler'
                         type="checkbox" 
                         value="Alquiler" 
                         checked={operacion === 'Alquiler'} 
@@ -88,9 +86,8 @@ const BarraLateral = () => {
                 </div>
                 
                 <div className='cont-venta-alq'>
-                <label className='label-filtro-tipo-operacion'>ALQUILER TEMPORAL.</label>
-                <input
-                    id='Alquiler Temporal'
+                <label className='label-filtro-tipo-ope-Alq-Temp'>ALQUILER TEMPORAL</label>
+                <input id='Alquiler Temporal'
                     type="checkbox"
                     value="Alquiler Temporal"
                     checked={operacion === "Alquiler Temporal"}

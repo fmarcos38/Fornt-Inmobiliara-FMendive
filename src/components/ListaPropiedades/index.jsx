@@ -16,7 +16,7 @@ function ListaPropiedades({allProps}) {
                                 <Card className='card' key={p.id}
                                     id={p.id}
                                     codigoReferencia={p.codigoReferencia}
-                                    direccion={p.direccion}
+                                    direccionF={p.direccionF}
                                     descripcion={p.descripcion}
                                     disposicion={p.disposicion}
                                     expensas={p.expensas}

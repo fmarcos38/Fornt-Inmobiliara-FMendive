@@ -7,8 +7,9 @@ import IconoAmb from '../../Imagenes/Iconos/IconoAmb';
 import IconoDormitorio from '../../Imagenes/Iconos/IconoDormitorios';
 import IconoBaños from '../../Imagenes/Iconos/IconoBaños';
 import './styles.css'
+import { formatMoney } from '../../Helps';
 
-function Card({ id, codigoReferencia, direccion, descripcion, disposicion, expensas, geoLat, geoLong, cantPisos,
+function Card({ id, codigoReferencia, direccionF, descripcion, disposicion, expensas, geoLat, geoLong, cantPisos,
         rentaTemporaria, destacadaEnWeb, baños, ubicacion, operacion, imagenes, productor, tituloPublicacion,
         supCubierta, ambientes, supSemiCub, dormitorios, unidadMedida, supTotal, tipo, supDescubierta, servicios 
     }) {
@@ -20,7 +21,7 @@ function Card({ id, codigoReferencia, direccion, descripcion, disposicion, expen
         <div className='contCard'>
             {/* titulo */}
             <div className='card-title'>
-                <h2>{operacion[0].operacion}</h2>
+                <h2 className='titulo-card'>{operacion[0].operacion}</h2>
             </div>
 
             {/* img + animacion + abre detalle */}
@@ -36,7 +37,7 @@ function Card({ id, codigoReferencia, direccion, descripcion, disposicion, expen
 
                     {/* msj detalle si hay hover */}
                     <div className={`detail ${showDetail ? 'show' : ''}`}>
-                        <p className='p-detalle'>Detalle</p>
+                        <p className='palabra-abre-detalle'>Detalle</p>
                     </div>
                 </div>
             </NavLink>
@@ -44,20 +45,19 @@ function Card({ id, codigoReferencia, direccion, descripcion, disposicion, expen
             {/* info 1 */}
             <div className='card-info1'>
                 <div className='cont-titulo-publicacion'>
-                    <p className='tituloPublicacion'>{tituloPublicacion}</p>
+                    <span className='tituloPublicacion'>{tituloPublicacion}</span>
                 </div>
                 <div className='cont-info1'>
                     <img src={IconoUbicacion} alt='iconoUbi' style={{width:'30px', height:'30px'}}/>
-                    <p className='direcc'>
-                        Barrio: {ubicacion.barrio} |
-                        Direcc: {direccion}
-                    </p>
+                    <span className='direccion-card'>
+                        {/* Barrio: {ubicacion.barrio} | */} {direccionF}
+                    </span>
                 </div>
 
                 <div className='cont-precio-fav'>
                     <div className='cont-precio'>
                         <p className='precio'>
-                            <strong>USD {operacion[0].precios[0].precio}</strong>
+                            {operacion[0].precios[0].moneda} {formatMoney(operacion[0].precios[0].precio)}
                         </p>
                     </div>
                     <div className='cont-fav'>
