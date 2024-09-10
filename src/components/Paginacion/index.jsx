@@ -23,7 +23,8 @@ function Paginacion({allProps,currentPage, onPageChange, totalPropiedades}) {
             <button
                 className="paginacion-button"
                 onClick={() => handlePrevPage(currentPage - 1)}
-                disabled={currentPage === 1}>
+                disabled={currentPage === 1}
+            >
                 Anterior
             </button>
 
@@ -34,7 +35,8 @@ function Paginacion({allProps,currentPage, onPageChange, totalPropiedades}) {
             <button
                 className="paginacion-button"
                 onClick={() => handleNextPage(currentPage + 1)}
-                disabled={currentPage === totalPaginas}>
+                disabled={currentPage === totalPaginas}
+            >
                 Siguiente
             </button>
         </div>
