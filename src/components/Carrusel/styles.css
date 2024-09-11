@@ -3,10 +3,12 @@
     height: auto;
     display: flex;
     flex-direction: column;
-    align-items: center
+    align-items: center;
+    margin-top: 5px;
 }
 .cont-img-btns{
     position: relative;
+    width: 90%;
 }
 .btn-carrusel-prev, .btn-carrusel-next{
     width: auto;
@@ -16,7 +18,7 @@
     display: flex;
     justify-content: center;
     transform: translateY(-50%);
-    background-color: transparent;
+    background-color: rgba(247, 247, 242, 0.445);
     border: none;
     color: rgb(9, 9, 9);
     font-size: 18px;
@@ -29,13 +31,14 @@
 .img-carrusel{
     width: 100%;
     height: 550px;
-    cursor: pointer;
     border-radius: 10px;
 }
 .btn-carrusel-next{
     right: 10px;
 }
-
+.cont-imgs-peq{
+    width: 90%;
+}
 /* modal */
 .modal-overlay {
     position: fixed;

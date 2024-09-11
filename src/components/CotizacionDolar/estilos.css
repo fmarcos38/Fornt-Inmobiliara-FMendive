@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgb(53, 52, 52);
+    background: url('../../Imagenes/Texturas/Textura-04.jpg');
 }
 .cont-cotizaciones{
     width: 90%;
@@ -19,7 +19,7 @@
     color: #fff;
 }
 .dolarBlue {
-    width: 320px;
+    width: 250px;
     height: 260px;
     margin-left: 10px;
     margin-right: 10px;

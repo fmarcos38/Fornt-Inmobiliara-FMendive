@@ -163,7 +163,7 @@ a, Link{
 }
 
 /* responsive */
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1230px) {
     .menu-icon {
         display: none;
     }
@@ -191,30 +191,7 @@ a, Link{
     }
 }
 
-@media screen and (max-width: 950px){    
-    nav{
-        height: 4rem;
-    }
-    .navSup{
-        height: 1.5rem;
-    }
-    .iconoContact {
-        font-size: medium;
-        margin-left: 5px;
-    }
-    .navInf{
-        height: 2.5rem;
-    }
-    li {
-        list-style: none;
-        margin-right: 1.5rem;
-        color: black;
-        font-size: 15px;
-        font-weight: 450;
-    }
-}
-
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 1020px) {
     .colInf-2{
         display: none;
     }

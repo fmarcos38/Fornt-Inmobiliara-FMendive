@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProperty, resetProperty } from '../../Redux/Actions';
 import { InmobiliariaContext } from '../../Context';
@@ -7,21 +7,22 @@ import Carrusel from '../../components/Carrusel';
 import MapProp from '../../components/MapaProp';
 import FormularioContacto from '../../components/FormularioContacto';
 import ModalVideo from '../../components/ModalVideo';
+import IconoUbicacion from '../../Imagenes/iconoUbicacion.png';
 import OndemandVideoIcon from '@mui/icons-material/OndemandVideo';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import './estilos.css';
+import { formatMoney } from '../../Helps';
 
 
 function DetalleProp(){
 
     const { id } = useParams();  //let id = props.match.params.id 
     const propiedad = useSelector(state => state.propiedad);
-    //obt el tipo de operacion de la prop
     //obt el tipo de moneda
     const moneda =  propiedad?.operacion?.[0]?.precios?.[0]?.moneda; 
     //otengo el precio de la prop
     const precio =  propiedad?.operacion?.[0]?.precios?.[0]?.precio; 
-
+    const navigate = useNavigate();
     const dispatch = useDispatch();    
     const contexto = useContext(InmobiliariaContext); 
     //estado para el tooltipText
@@ -29,7 +30,7 @@ function DetalleProp(){
     //estado para el tooltipText
     const [showTooltipVolver, setShowTooltipVolver] = useState(false);
     const tooltipTextVideo = "Ver video propiedad";
-    const tooltipTextVolver = "Volver a resultados";
+    const tooltipTextVolver = "Volver atrás";
 
     const handleMouseEnter = () => {
         setShowTooltipVideo(true);
@@ -45,9 +46,8 @@ function DetalleProp(){
     };
 
     const handleClickAtras = () => {
-        window.history.back();
+        navigate('/');
     };
-    
 
     useEffect(() => {
         dispatch(getProperty(id));
@@ -61,7 +61,7 @@ function DetalleProp(){
             <div className='cont-detail'>
                 {/* datos principales */}
                 <div className='info-1'>
-                    <div className='cont-btns-atras-video'>
+                    <div className='cont-btns-atras'>
                         {/* btn-atrás */}
                         <button 
                             onClick={() => handleClickAtras()} 
@@ -75,38 +75,36 @@ function DetalleProp(){
                         {
                             showTooltipVolver && <div className="tooltipVolver">{tooltipTextVolver}</div>
                         }
-                        {/* btn-video */}
-                        <button
-                            onClick={() => contexto.handleIsOpen()}
-                            className='btn-video'
-                            onMouseEnter={handleMouseEnter}
-                            onMouseLeave={handleMouseLeave}
-                        >
-                            <OndemandVideoIcon className='icono-video' />
-                        </button>
-                        {/* msj toolTip */}
-                        {
-                            showTooltipVideo && <div className="tooltip">{tooltipTextVideo}</div>
-                        }
                     </div>
+                    {/* Titulo prop */}
                     <div className='cont-info-titulo'>
+                        <span className='detalle-titulo-prop'>
+                            {propiedad.tituloPublicacion} - 
+                        </span>
+                        <img src={IconoUbicacion} alt='' style={{width:'40px', height:'40px'}}/>
+                        <span className='detalle-titulo-direccion'>                           
+                            {propiedad.direccion}
+                        </span>
+                    </div>
+                    {/* Precio y Moneda */}
+                    <div className='cont-info-precio'>
                         {
                             propiedad.operacion?.map(o => {
                                 return(
                                     <div key={o.operacion_id}>
-                                        <p>{o.operacion}</p>
+                                        <p className='detalle-precio'>{o.operacion}</p>
                                     </div>
                                 )
                             })
                         }                        
                         <p> - </p>
-                        <p>{moneda}{precio}</p>                                                
+                        <p className='detalle-precio'>{moneda}{formatMoney(precio)}</p>                                                
                     </div>
                 </div>
 
                 {/* carrusel y datos */}
                 <div className='cont-imgs-info'>
-                    <div className='info-imagenes'>
+                    <div className='cont-imagenes'>
                         {
                             propiedad?.imagenes
                                 ?
@@ -115,42 +113,11 @@ function DetalleProp(){
                                 <p>No img</p>
                         }
                     </div>
-
-                    <div className='info-textos'>
-                        <span>DETALLES DE LA PROPIEDAD</span>
-
-                        <div className='cont-datos'>
-                            <p>Ambientes: </p>
-                            <p className='dato'>{propiedad.ambientes}</p>
-                        </div>
-                        <div className='cont-datos'>
-                            <p>Dormitorios: </p>
-                            <p className='dato'>{propiedad.dormitorios}</p>
-                        </div>
-                        <div className='cont-datos'>
-                            <p>Baños: </p>
-                            <p className='dato'>{propiedad.baños}</p>
-                        </div>
-                        <div className='cont-datos'>
-                            <p>Sup Cubierta: </p>
-                            <p className='dato'>{propiedad.sup}</p>
-                        </div>
-                        <div className='cont-datos'>
-                            <p>Sup Semicubierta: </p>
-                            <p className='dato'>{propiedad.sup}</p>
-                        </div>
-                        <div className='cont-datos'>
-                            <p>Sup tot: </p>
-                            <p className='dato'>{propiedad.sup}</p>
-                        </div>
-                        <div className='cont-datos'>
-                            <p>Dirección: </p>
-                            <p className='dato'>{propiedad.direccion}</p>
-                        </div>
-                        <div className='cont-datos'>
-                            <p>Barrio: </p>
-                            <p className='dato'>{propiedad.barrio}</p>
-                        </div>
+                    <div className='cont-form-contacto'>
+                        <FormularioContacto 
+                            tituloPublicacion={propiedad.tituloPublicacion}
+                            codigoReferencia={propiedad.codigoReferencia}
+                        />
                     </div>
                 </div>
 
@@ -164,10 +131,7 @@ function DetalleProp(){
                             dangerouslySetInnerHTML={{ __html: propiedad.descripcion }}
                         />
                     </div>
-                    {/* formulario contacto */}
-                    <div className='cont-formulario-detalle'>
-                        <FormularioContacto />
-                    </div>
+                    
                 </div>
                 
                 {/* google map */}

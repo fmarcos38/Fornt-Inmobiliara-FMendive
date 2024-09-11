@@ -4,12 +4,13 @@
     display: flex;
     justify-content: center;
     align-items: start; /* eje y */
-    background-image: url('../../Imagenes/Mar-Del-Plata.webp');
-    background-size: cover; /* Hace que la imagen de fondo cubra todo el div */
-    background-position: center;
+    background: url('../../Imagenes/Texturas/Textura-02.jpg');
+    /* background-image: url('../../Imagenes/Mar-Del-Plata.webp'); */
+    /* background-size: cover; */ /* Hace que la imagen de fondo cubra todo el div */
+    /* background-position: center; */
 }
 .cont-detail{
-    width: 80%;
+    width: 95%;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -18,7 +19,7 @@
     margin-top: 10px;
     margin-bottom: 10px;
     border-radius: 10px;
-    background-color: rgb(49, 51, 51);
+    background: url('../../Imagenes/Texturas/Textura-04.jpg');
 }
 .info-1{
     width: 95%;
@@ -28,14 +29,27 @@
     align-items: center;
     margin-top: 10px;
     margin-bottom: 10px;
-    border-style: solid 1px black;
-    border-radius: 20px;
 }
-.cont-btns-atras-video{
-    width: 30%;
-    height: auto;
+.cont-btns-atras{
+    width: 3%;
+    height: 100%;
     display: flex;
     justify-content: start;
+    align-items: center;
+}
+.cont-info-titulo{
+    width: 78%;
+    height: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.cont-info-precio{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
 }
 .btn-volver,
 .btn-video {
@@ -57,18 +71,17 @@
     background-color: var(--primary-color);
 }
 .tooltip {
+    position: absolute;
+    bottom: 150; /* Position the tooltip above the button */
+    left: 20%;
+    width: 120px;
     visibility: visible;
     background-color: rgb(221, 8, 8);
     color: #fff;
     text-align: center;
     border-radius: 4px;
-    padding: 5px;
-    position: absolute;
-    z-index: 1;
-    bottom: 150; /* Position the tooltip above the button */
-    left: 26%;
-    margin-left: -60px; /* Center the tooltip */
-    width: 120px;
+    padding: 5px;    
+    z-index: 1;    
     opacity: 0.9;
     transition: opacity 0.3s;
 }
@@ -82,37 +95,45 @@
     position: absolute;
     z-index: 1;
     bottom: 150; /* Position the tooltip above the button */
-    left: 26%;
-    margin-left: -60px; /* Center the tooltip */
-    width: 120px;
+    left: 130px;
+    width: auto;
     opacity: 0.9;
     transition: opacity 0.3s;
 }
-.cont-info-titulo{
-    width: 50%;
-    height: auto;
-    display: flex;
-    justify-content: end;
-}
-.cont-info-titulo p{
-    font-family: Poppins;
-    font-weight: 800;
-    font-size: large;
-    color: var(--primary-color);
+.detalle-titulo-prop,
+.detalle-titulo-direccion {
     margin-left: 10px;
+    font-size: 23px;
+    color: var(--primary-color);
 }
+.detalle-titulo-direccion{
+    margin: 3px;
+}
+.detalle-precio{
+    margin-right: 10px;
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--primary-color);
+    background-color: #070707;
+}
+
 .cont-imgs-info{
     width: 95%;
-    height: 550px;
+    height: auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     margin-bottom: 180px;
 }
-.info-imagenes{
-    width: 65%;
-    height: 100%;
-    border-radius: 10px;
+.cont-imagenes{
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cont-form-contacto{
+    width: 25%;
+    height: 700px;
 }
 .info-textos{
     width: 35%;

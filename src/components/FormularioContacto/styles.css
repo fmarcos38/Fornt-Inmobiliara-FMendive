@@ -6,6 +6,8 @@
     height: auto;
 }
 .div-cont-form {
+    width: 100%;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -16,9 +18,10 @@
     background-color: #fff;
     border-radius: 20px;
 }
-.div-cont-form h1 {
-    margin: 0;
-    padding: 5px;
+.form-logo{
+    width: 90%;
+    height: 50px;
+    margin-top: 3px;
 }
 .form__group {
     position: relative;
@@ -33,7 +36,7 @@
     border-bottom: 2px solid #6b6b6b;
     outline: 0;
     font-size: 17px;
-    color: #fff;
+    color: black;
     padding: 7px 0;
     background: transparent;
     transition: border-color 0.2s;
@@ -59,7 +62,7 @@
     padding-bottom: 6px;
     font-weight: 700;
     border-width: 3px;
-    border-image: linear-gradient(to right, #03f7ef, #212021);
+    border-image: linear-gradient(to right, #EEC68E, #212021);
     border-image-slice: 1;
 }
 .form__field:focus~.form__label {
@@ -76,12 +79,49 @@
 .form__field:invalid {
     box-shadow: none;
 }
-/* .textarea-form-contacto{
-    width: 100%;
-    height: auto;
-} */
+.textarea-form-contacto{
+    overflow: hidden; /* Evita el scroll */
+    resize: none;     /* Evita que el usuario cambie el tamaño manualmente */
+    min-height: 50px; /* Altura mínima para que no colapse el área de texto */
+    width: 100%; 
+    font-size: 18px;
+}
 .btn-enviar-contacto{
+    width: 90%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin: 20px 0 10px 0;
+}
+.cont-btn-form{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.btn-form,
+.btn-form-whatsApp {
+    width: 49%;
+    height: auto;
+    font-size: 20px;
+    padding: 5px;
+    border-radius: 10px;
+    color: var(--primary-color);
+    background-color: var(--color-negro-logo);
+}
+.cont-btn-form-whatsApp{
+    width: 100%;
+    display: flex;
+    margin-top: 5px;
+}
+.btn-form-whatsApp{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    font-size: 20px;
 }
 
 @media screen and (max-width: 550px){
