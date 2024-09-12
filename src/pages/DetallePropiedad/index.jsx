@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState, useRef } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProperty, resetProperty } from '../../Redux/Actions';
@@ -32,6 +32,7 @@ function DetalleProp(){
     const tooltipTextVideo = "Ver video propiedad";
     const tooltipTextVolver = "Volver atrás";
 
+
     const handleMouseEnter = () => {
         setShowTooltipVideo(true);
     };
@@ -54,8 +55,9 @@ function DetalleProp(){
 
         return () => { dispatch(resetProperty()); }
     }, [dispatch, id]);
-    
-    
+
+
+
     return(
         <div className='contGralDetalle'>
             <div className='cont-detail'>
@@ -75,17 +77,43 @@ function DetalleProp(){
                         {
                             showTooltipVolver && <div className="tooltipVolver">{tooltipTextVolver}</div>
                         }
+
+                        {/* btn-video */}
+                        {
+                            propiedad.video && (
+                                <>
+                                    <button
+                                        onClick={() => contexto.handleIsOpen()}
+                                        className='btn-video'
+                                        onMouseEnter={handleMouseEnter}
+                                        onMouseLeave={handleMouseLeave}
+                                    >
+                                        <OndemandVideoIcon className='icono-video' />
+                                    </button>
+                                    {/* msj toolTip */}
+                                    {
+                                        showTooltipVideo && <div className="tooltip">{tooltipTextVideo}</div>
+                                    }
+                                </>
+                            )
+                        }
                     </div>
+                    
                     {/* Titulo prop */}
                     <div className='cont-info-titulo'>
-                        <span className='detalle-titulo-prop'>
-                            {propiedad.tituloPublicacion} - 
-                        </span>
-                        <img src={IconoUbicacion} alt='' style={{width:'40px', height:'40px'}}/>
-                        <span className='detalle-titulo-direccion'>                           
-                            {propiedad.direccion}
-                        </span>
+                        <div>
+                            <span className='detalle-titulo-prop'>
+                                {propiedad.tituloPublicacion} -
+                            </span>
+                        </div>
+                        <div className='cont-titulo-icono-direcc'>
+                            <img src={IconoUbicacion} alt='' style={{ width: '40px', height: '40px' }} />
+                            <span className='detalle-titulo-direccion'>
+                                {propiedad.direccion}
+                            </span>
+                        </div>
                     </div>
+                    
                     {/* Precio y Moneda */}
                     <div className='cont-info-precio'>
                         {
@@ -102,7 +130,7 @@ function DetalleProp(){
                     </div>
                 </div>
 
-                {/* carrusel y datos */}
+                {/* carrusel y formulario */}
                 <div className='cont-imgs-info'>
                     <div className='cont-imagenes'>
                         {
@@ -113,6 +141,7 @@ function DetalleProp(){
                                 <p>No img</p>
                         }
                     </div>
+
                     <div className='cont-form-contacto'>
                         <FormularioContacto 
                             tituloPublicacion={propiedad.tituloPublicacion}
@@ -121,22 +150,72 @@ function DetalleProp(){
                     </div>
                 </div>
 
-                {/* descrip prop y form contacto*/}
+                {/* descrip prop */}
                 <div className='cont-titulo-descripcion-form'>
                     <div className='cont-descrip'>
                         <p className='titulo-descrip-prop'>Descripción Propiedad</p>
                         {/* Renderizar HTML dentro de la descripción */}
                         <p
-                            className='p-descrip'
+                            className='p-descrip-detalle'
                             dangerouslySetInnerHTML={{ __html: propiedad.descripcion }}
                         />
                     </div>
-                    
+
+                    <div className='cont-descrip'>
+                        <p className='titulo-descrip-prop'>Detalle Propiedad</p>
+                        <div className='col-descrip-prop'>
+                            <div className='col-descrip-prop-1'>
+                                <div className='cont-p-col-1'>
+                                    <p className='p-col-1'>Precio:</p>
+                                    <p className='p-col-1'>{moneda}{formatMoney(precio)}</p>
+                                </div>
+                                <div className='cont-p-col-1'>
+                                    <p className='p-col-1'>Sup. Cubierta:</p>
+                                    <p className='p-col-1'>{propiedad.supCubierta}{propiedad.unidadMedida}</p>
+                                </div>
+                                <div className='cont-p-col-1'>
+                                    <p className='p-col-1'>Sup. Total:</p>
+                                    <p className='p-col-1'>{propiedad.supTotal}{propiedad.unidadMedida}</p>
+                                </div>
+                                <div className='cont-p-col-1'>
+                                    <p className='p-col-1'>Dormitorios:</p>
+                                    <p className='p-col-1'>{propiedad.dormitorios}</p>
+                                </div>
+                            </div>
+                            <div className='col-descrip-prop-1'>
+                                <div className='cont-p-col-1'>
+                                    <p className='p-col-1'>Ambientes:</p>
+                                    <p className='p-col-1'>{propiedad.ambientes}</p>
+                                </div>
+                                <div className='cont-p-col-1'>
+                                    <p className='p-col-1'>Baños:</p>
+                                    <p className='p-col-1'>{propiedad.baños}</p>
+                                </div>
+                                <div className='cont-p-col-1'>
+                                    <p className='p-col-1'>Tipo Operacio:</p>
+                                    {
+                                        propiedad.operacion?.map(o => {
+                                            return (
+                                                <div key={o.operacion_id}>
+                                                    <p className='p-col-1'>{propiedad.operacion[0]?.operacion}</p>
+                                                </div>
+                                            )
+                                        })
+                                    }
+                                </div>
+                                <div className='cont-p-col-1'>
+                                    <p className='p-col-1'>Tipo:</p>
+                                    <p className='p-col-1'>{propiedad.tipo?.nombre}</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
                 
                 {/* google map */}
                 <div className='cont-map'>
-                    <p>Ubicacion Propiedad</p>
+                    <p className='p-titulo-mapa'>Ubicacion Propiedad</p>
                     <MapProp 
                         lat={propiedad.geoLat} 
                         lng= {propiedad.geoLong}

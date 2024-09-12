@@ -14,9 +14,9 @@
     align-items: center;
     /* width: 500px;
     height: 500px; */
+    border-radius: 20px;
     color: black;
     background-color: #fff;
-    border-radius: 20px;
 }
 .form-logo{
     width: 90%;
@@ -124,15 +124,4 @@
     font-size: 20px;
 }
 
-@media screen and (max-width: 550px){
-    .cont-formulario {
-        width: 100%;
-        height: auto;
-        margin: 20px 0 20px 0;
-    }
-    .div-cont-form {
-        width: 100%;
-        height: auto;
-        background-color: rgba(244, 84, 52, 0.942);
-    }
-}
+/* responsive */

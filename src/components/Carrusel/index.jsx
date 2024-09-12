@@ -4,9 +4,8 @@ import { isOpenModalPicture } from '../../Redux/Actions';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import Modal from '../../components/Modal';
-import './styles.css';
 import CarruselImgPequeñas from '../CarruselImgPequeñas';
-
+import './styles.css';
 
 function Carrusel({imagenes}) {
 
