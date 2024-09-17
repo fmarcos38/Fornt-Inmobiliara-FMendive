@@ -1,13 +1,11 @@
 import React from 'react'
-import './styles.css';
 import { useDispatch } from 'react-redux';
 import { isOpenModalPicture } from '../../Redux/Actions';
 import CarruselModal from '../CarruselModal';
-
+import './styles.css';
 
 function Modal({imagenes}) {
 
-    
     const dispatch = useDispatch();
 
     const handleOnclickClose = () =>{

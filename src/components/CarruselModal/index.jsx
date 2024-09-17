@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import './styles.css';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import './styles.css';
 
 function CarruselModal({imagenes}) {
 
@@ -31,7 +31,7 @@ function CarruselModal({imagenes}) {
                 </button>
 
                 {/* imagen a ostrar */}
-                <img src={imagenes[indexImgActual]} alt='' className='img-carruselM' />
+                <img src={imagenes[indexImgActual].original} alt='' className='img-carruselM' />
 
                 {/* btn prox */}
                 <button className='btn-carrusel-next' onClick={() => handleClickNext()}>
