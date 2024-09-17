@@ -18,32 +18,30 @@ function Footbar() {
                     <ul>
                         {/* Contactanos */}
                         <li>
-                            <h2>
-                                <p className='titulo-col-foot'>Encontranos en</p>
-                            </h2>
-                            <p className='info-contactos'>
-                                Belgrano 2214 - Mar del Plata
-                            </p>
+                            <div className='divLinks'>
+                                <h2>
+                                    <p className='titulo-col-foot'>Encontranos en</p>
+                                </h2>
+                                <p className='info-contactos'>
+                                    San lorenzo 4056 - Mar del Plata
+                                </p>
 
-                            <p className='info-contactos'>
-                                Teléfono (0223) 4915977
-                            </p>
+                                <p className='info-contactos'>
+                                    Whatsapp +54 9 (223) 4422665
+                                </p>
 
-                            <p className='info-contactos'>
-                                Whatsapp +54 9 (223) 6349596
-                            </p>
-
-                            <p className='info-contactos'>
-                                info@belluccipropiedades.com
-                            </p>
-
+                                <p className='info-contactos'>
+                                    florenciamendive@gmail.com
+                                </p>
+                            </div>
                         </li>
                         {/* Links */}
                         <li>
-                            <h2>
-                                <p className='titulo-col-foot'>Links</p>
-                            </h2>
                             <div className='divLinks'>
+                                <h2>
+                                    <p className='titulo-col-foot'>Links</p>
+                                </h2>
+
                                 <Link to={'/venta'} className='link-footbar'>Ventas</Link>
                                 <Link to={'/alquiler'} className='link-footbar'>Alquileres</Link>
                                 <Link to={'/destacadas'} className='link-footbar'>Destacadas</Link>
@@ -53,6 +51,7 @@ function Footbar() {
                         </li>
                         {/* Redes */}
                         <li>
+                        <div className='divLinks'>
                             <h2>
                                 <p className='titulo-col-foot'>Seguinos</p>
                             </h2>
@@ -63,6 +62,7 @@ function Footbar() {
                                 <a href='http://api.whatsapp.com/send?phone=2234422665'>
                                 <img src={IconoWhatsApp} alt='' className='icono-redes-foot'/>
                                 </a>
+                                </div>
                             </div>
                         </li>
                     </ul>

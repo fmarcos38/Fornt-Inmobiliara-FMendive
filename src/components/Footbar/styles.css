@@ -37,7 +37,6 @@ footer ul li {
 }
 /* color linea sup y titulo*/
 footer ul li h2 {
-    display: block;
     margin-bottom: 3px;
     font-size: 18px;
     font-weight: 200;
@@ -85,7 +84,7 @@ footer ul li h2 {
     height: 50px;
 }
 .cont-info-derechos{
-    width: 80%;
+    width: 90%;
     border-top: 1px solid var(--primary-color);
 }
 .info-derechos{
@@ -108,11 +107,8 @@ footer ul li h2 {
 }
 @media screen and (max-width: 650px) {
     .divF {
-        display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
-        width: 100%;
     }
     .logo-footbar {
         width: 140px;
@@ -120,9 +116,7 @@ footer ul li h2 {
         margin-top: 20px;
     }
     footer ul {
-        display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
         width: 90%;
     }
@@ -132,9 +126,15 @@ footer ul li h2 {
         width: 90%;
         margin-bottom: 10px;
     }
+    footer ul li h2 {
+        width: 100%;
+    }
     .divLinks{
-        justify-content: center;
+        display: flex;
+        flex-direction: column;
         align-items: center;
+        gap: 5px;
+        width: 90%; 
     }
     footer ul li h4 p, footer ul li p, footer ul li .link {
         font-size: 15px;
@@ -147,6 +147,6 @@ footer ul li h2 {
         justify-content: center;
         align-items: center;
     }
-}
+} 
 
 

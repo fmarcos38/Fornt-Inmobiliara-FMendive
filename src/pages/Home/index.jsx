@@ -4,7 +4,6 @@ import { getProps } from '../../Redux/Actions';
 import ListaPropiedades from '../../components/ListaPropiedades';
 import LandingPage from '../../components/LandingPage';
 import Loading from '../../components/Loading';
-import CotizacionDolar from '../../components/CotizacionDolar';
 import BarraLateral from '../../components/Barra-Lateral';
 import WhatsAppButton from '../../components/BotonWhastApp';
 import Paginacion from '../../components/Paginacion';
@@ -56,10 +55,7 @@ function Home() {
                                 </div>
                             </div> 
 
-                            {/* cotizaciones */}
-                            <CotizacionDolar />
-
-                            {/* bitón whatsApp */}
+                            {/* botón whatsApp */}
                             <WhatsAppButton/>
                         </div>
                     )
