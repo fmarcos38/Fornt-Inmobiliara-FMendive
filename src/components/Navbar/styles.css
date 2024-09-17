@@ -3,100 +3,85 @@ nav {
     top: 0;
     left: 0; */ /* si quiero nav fija */
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 80px;
     /* z-index: 1000; */
+    background-color: var(--color-negro-logo);
 }
-/* cont nav Sup */
-.navSup{
-    width: 100%;
-    height: 2rem;
+.cont-principal-nav{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* cont logo */
+.cont-logo{
+    width: 20%;
+    height: 80px;
     display: flex;
     justify-content: center;    
     align-items: center;
+}
+.logo{
+    height: 3.5rem;
+}
+/* cont barra sup e inf */
+.cont-nav-sup-inf{
+    width: 80%;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.nav-sup, 
+.nav-inf {
+    width: 100%;
+    height: 40px;
     background-color: var(--color-negro-logo);
+}
+.nav-sup {
+    display: flex;
+    justify-content: end;
 }
 /* texto nav sup */
 .texto-barra-sup{
     color: var(--primary-color);
 }
-.redes{
-    width: 80%;
-    height: 2.5rem;
+.cont-data-nav-sup-direcc,
+.cont-data-nav-sup-tel,
+.cont-data-nav-sup-email,
+.cont-data-nav-sup-insta,
+.cont-data-nav-sup-whatsApp {
+    width: auto;
     display: flex;
-    justify-content: center;    
+    justify-content: end;
     align-items: center;
-    color: var(--primary-color);
-}
-.col1 {
-    width: 60%;
-    height: 100%;
-    display: flex;
-    justify-content: start;    
-    align-items: center; /* Color de fondo para visualización */
-}
-.col2 {
-    display: flex;
-    justify-content: end;    
-    align-items: center;
-    flex-grow: 1; /* La segunda columna ocupará el espacio restante */
-    height: 100%; /* Color de fondo para visualización */
 }
 .iconoContact{
     margin-left: 5px;
     margin-right: 5px;
+    color: var(--primary-color);
 }
 .iconoInstaNew{
     width: 40px;
     height: 40px;
 }
-/* cont nav inferior menu */
-.navInf{
-    width: 100%;
-    height: 3rem;
+/* nav inf */
+.nav-inf{
     display: flex;
-    justify-content: center;    
+    justify-content: center;
     align-items: center;
-    background-color: var(--color-negro-logo);
 }
-.cont-nav-inf{
-    display: flex;
-    /* grid-template-columns: 1fr 1fr 1fr; */
-    justify-content: space-between;
-    align-items: center;
-    width: 80%;
-    height: 3.5rem;
-}
-/* col 1 */
-.colInf-1{
-    width: 30%;
-    height: 3.5rem;
-    display: flex;
-    justify-content: center;    
-    align-items: center;
-    margin-left: 7px;
-}
-.logo{
-    height: 2.6rem;
-}
-/* col2 */
-.colInf-2{
-    width: 60%;
-    display: flex;
-    justify-content: center;    
-    align-items: center;
-    height: 3.5rem;
-}
-.ul-menu-izq{
+.ul-nav-inf{
     display: flex;
     justify-content: center;
     align-items: center;
 }
 /* texto nav inf */
-li {
+.ul-nav-inf > li {
     list-style: none;
     margin-right: 1.5rem;
     font-size: 25px;
@@ -107,16 +92,7 @@ a, Link{
     color: var(--primary-color);
     text-decoration: none;
 }
-/* col 3 */
-.colInf-3{
-    width: 10%;
-    display: flex;
-    justify-content: end;    
-    align-items: center;
-    height: 3.5rem;
-}
-
-/* menu hambur pantalla chica*/
+/* menú hamburg */
 .menu-icon span {
     width: 100%;
     height: 3px;
@@ -134,17 +110,18 @@ a, Link{
 }
 .menu-desplegable {
     position: absolute;
-    top: 64px;
+    top: 80px;
     right: 0;
     background: rgb(41, 40, 40);
-    width: 200px;
+    width: auto;
+    padding: 5px;
     border-radius: 4px;
     overflow: hidden;
     transition: all 0.3s ease;
     z-index: 3;
 }
-.menu ul {
-    list-style: none;
+.ul-lista-pChica {
+    list-style-type: none;
     padding: 0;
 }
 .menu li {
@@ -160,45 +137,125 @@ a, Link{
 }
 .items-pChica{
     margin: 10px 0 10px 0;
+
 }
 
 /* responsive */
-@media screen and (max-width: 1230px) {
+@media screen and (max-width: 1077px) {
     .menu-icon {
         display: none;
     }
-    .texto-inmobiliaria {
-        font-size: 17px;
+    .texto-barra-sup{
+        font-size: 15px;
     }
     .cont-nav-inf{ /* usando flexbox */
         display: flex;
         flex-wrap: wrap;
     }
-    .colInf-2 {
-        flex: 1;
-        min-width: 300px;
+    /* texto nav inf */
+    .ul-nav-inf > li {
+        font-size: 20px;
     }
-    .ul-menu-izq {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    li {
-        list-style: none;
-        font-size: 17px;
-        font-weight: 500;
-    }
+    
 }
-
-@media screen and (max-width: 1020px) {
-    .colInf-2{
+@media screen and (max-width: 971px) {
+    .menu-icon {
         display: none;
+    }
+    .cont-principal-nav-sup-inf{
+        width: 95%;
+    }
+    /* cont logo */
+    .cont-logo{
+        width: 25%;
+    }
+    .logo{
+        height: 2.5rem;
+    }
+    .iconoContact{
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    .iconoInstaNew{
+        width: 30px;
+        height: 30px;
+    }
+    .texto-barra-sup{
+        font-size: 13px;
     }
     .cont-nav-inf{ /* usando flexbox */
         display: flex;
-        justify-content: space-between;
-        width: 80%;
+        flex-wrap: wrap;
+    }
+    /* texto nav inf */
+    .ul-nav-inf > li {
+        font-size: 17px;
+    }
+    
+}
+@media screen and (max-width: 775px) {
+    .cont-principal-nav{
+        width: 95%;
+    }
+    .cont-principal-nav-sup-inf{
+        width: 95%;
+    }
+    /* cont logo */
+    .cont-logo{
+        width: 30%;
+    }
+    .logo{
+        height: 2rem;
+    }
+    .iconoContact{
+        margin-left: 3px;
+        margin-right: 3px;
+    }
+    .iconoInstaNew{
+        width: 25px;
+        height: 25px;
+    }
+    .texto-barra-sup{
+        font-size: 13px;
+    }
+    /* texto nav inf */
+    .ul-nav-inf > li {
+        font-size: 15px;
+    }
+    
+}
+@media screen and (max-width: 670px) {
+    /* cont logo */
+    .cont-logo{
+        width: 90%;
+    }
+    .logo{
+        height: 2.5rem;
+    }
+    .cont-nav-sup-inf{
+        display: none;
+    }
+    .iconoContact{
+        margin-left: 3px;
+        margin-right: 3px;
+    }
+    .iconoInstaNew{
+        width: 25px;
+        height: 25px;
+    }
+    .texto-barra-sup{
+        font-size: 13px;
+    }
+    /* texto nav inf */
+    .ul-nav-inf > li {
+        font-size: 15px;
+    }
+    /* menu P.chica lo debo declarar acá, no arriba*/
+    .cont-menu-hambur{
+        width: 10%;
+        display: flex;
+        justify-content: center;    
+        align-items: center;
     }
     .menu-icon {
         width: 30px;
@@ -207,50 +264,5 @@ a, Link{
         flex-direction: column;
         justify-content: space-between;
         cursor: pointer;
-    }
-    .menu-icon span {
-        width: 100%;
-        height: 3px;
-        background-color: var(--primary-color);
-        transition: all 0.3s ease;
-    }
-}
-
-@media screen and (max-width: 800px) {
-    /* nav Sup */
-    .navSup{
-        width: 100%;
-    }
-    .texto-barra-sup{
-        font-size: 12px;
-    }
-    .redes{
-        width: 100%;
-    }
-    .col1{
-        width: 95%;
-        height: 100%;
-    }
-    /* col 1 */
-    .colInf-1 {
-        width: 30%;
-        height: 3.5rem;
-        display: flex;
-        justify-content: start;
-        align-items: center;
-        margin-left: 15px;
-    }
-    .logo {
-        height: 2rem;
-    }
-    /* nav Inf */
-    .cont-nav-inf{
-        grid-template-columns: 1fr 1fr;
-        width: 90%;
-    }
-}
-@media screen and (max-width: 450px){
-    .col2 {
-        display: none;
     }
 }

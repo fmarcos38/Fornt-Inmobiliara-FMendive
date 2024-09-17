@@ -4,7 +4,7 @@ import ListaPropiedades from '../../components/ListaPropiedades';
 import BarraLateral from '../../components/Barra-Lateral';
 
 
-function PropsDestacadas() {
+function Emprendimientos() {
 
     const props = useSelector(state => state.propiedades);
     const destacadas = props.filter(p => p.destacada === true);
@@ -12,7 +12,7 @@ function PropsDestacadas() {
 
     return (
         <div className='cont-prop-Venta'>
-            <h1>Propiedade Destacadas</h1>
+            <h1>Emprendimientos</h1>
             {/* contenedor filtros y lista props */}
             <div className='cont-filtros-listaProps'>
                 {/* filtros */}
@@ -29,4 +29,4 @@ function PropsDestacadas() {
     )
 }
 
-export default PropsDestacadas
+export default Emprendimientos
