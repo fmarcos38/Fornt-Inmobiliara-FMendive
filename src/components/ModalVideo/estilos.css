@@ -9,6 +9,7 @@
     width: 90%;
     height: 90%;
     background-color: black;
+    z-index: 5;
 }
 
 .cont-btn-cierra-modalVideo{

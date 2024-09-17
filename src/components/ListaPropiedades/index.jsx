@@ -37,6 +37,7 @@ function ListaPropiedades({allProps}) {
                                     dormitorios={p.dormitorios}
                                     unidadMedida={p.unidadMedida}
                                     bañoSuit={p.bañoSuit}
+                                    cantCocheras={p.cantCocheras}
                                     supTotal={p.supTotal}
                                     tipo={p.tipo}
                                     supDescubierta={p.supDescubierta}

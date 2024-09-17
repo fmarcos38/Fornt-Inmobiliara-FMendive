@@ -5,12 +5,12 @@ import Favorito from '../Favoritos';
 import IconoSup from '../../Imagenes/Iconos/IconoSup';
 import IconoAmb from '../../Imagenes/Iconos/IconoAmb';
 import IconoDormitorio from '../../Imagenes/Iconos/IconoDormitorios';
-import IconoBaños from '../../Imagenes/Iconos/IconoBaños';
-import './styles.css'
+import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
 import { formatMoney } from '../../Helps';
+import './styles.css'
 
 function Card({ id, codigoReferencia, direccionF, descripcion, disposicion, expensas, geoLat, geoLong, cantPisos,
-        rentaTemporaria, destacadaEnWeb, baños, ubicacion, operacion, imagenes, productor, tituloPublicacion,
+        rentaTemporaria, destacadaEnWeb, baños, cantCocheras, ubicacion, operacion, imagenes, productor, tituloPublicacion,
         supCubierta, ambientes, supSemiCub, dormitorios, unidadMedida, supTotal, tipo, supDescubierta, servicios 
     }) {
 
@@ -69,35 +69,27 @@ function Card({ id, codigoReferencia, direccionF, descripcion, disposicion, expe
             {/* info 2 */}
             <div className='card-info2'>
                 <div className='div-info2'>
-                    <p className='info2'>
-                        <IconoSup />
-                    </p>
+                    <IconoSup />                    
                     <p className='info2'>Superficie</p>
                     <p className='info2'>{unidadMedida}</p>
                 </div>
 
                 <div className='div-info2'>
-                    <p className='info2'>
-                        <IconoAmb/>
-                    </p>
+                    <IconoAmb />                    
                     <p className='info2'>Ambientes</p>
                     <p className='info2'>{ambientes}</p>
                 </div>
 
                 <div className='div-info2'>
-                    <p className='info2'>
-                        <IconoDormitorio/>
-                    </p>
+                    <IconoDormitorio />                    
                     <p className='info2'>Dormitorios</p>
                     <p className='info2'>{dormitorios}</p>
                 </div>
 
                 <div className='div-info2'>
-                    <p className='info2'>
-                        <IconoBaños />
-                    </p>
-                    <p className='info2'>Baños</p>
-                    <p className='info2'>{baños}</p>
+                    <DirectionsCarIcon sx={{ color: 'rgba(171, 132, 94, 1)', width:'28px', height:'28px' }}/>
+                    <p className='info2'>Cocheras</p>
+                    <p className='info2'>{cantCocheras}</p>
                 </div>
             </div>
         </div>
