@@ -61,49 +61,47 @@ function DetalleProp(){
             <div className='cont-detail'>
                 {/* datos principales */}
                 <div className='info-1'>
-                    <div className='cont-btns-atras'>
-                        {/* btn-atrás */}
-                        <button 
-                            onClick={() => handleClickAtras()} 
-                            className='btn-volver'
-                            onMouseEnter={handleMouseEnterVolver}
-                            onMouseLeave={handleMouseLeaveVolver}
-                        >
-                            <ArrowBackIcon/>
-                        </button>
-                        {/* msj toolTip */}
-                        {
-                            showTooltipVolver && <div className="tooltipVolver">{tooltipTextVolver}</div>
-                        }
-
-                        {/* btn-video */}
-                        <button
-                            onClick={() => contexto.handleIsOpen()}
-                            className='btn-video'
-                            onMouseEnter={handleMouseEnter}
-                            onMouseLeave={handleMouseLeave}
-                        >
-                            <OndemandVideoIcon className='icono-video' />
-                        </button>
-                        {/* msj toolTip */}
-                        {
-                            showTooltipVideo && <div className="tooltip">{tooltipTextVideo}</div>
-                        }                        
+                {/* Titulo prop */}
+                    <div className='cont-titulo-detalle'>
+                        <span className='detalle-titulo-prop'>
+                            {propiedad.tituloPublicacion}
+                        </span>
                     </div>
                     
-                    {/* Titulo prop */}
-                    <div className='cont-info-titulo'>
-                        <div>
-                            <span className='detalle-titulo-prop'>
-                                {propiedad.tituloPublicacion}
-                            </span>
-                        </div>
-                        <div className='cont-titulo-icono-direcc'>
-                            <img src={IconoUbicacion} alt='' style={{ width: '40px', height: '40px' }} />
-                            <span className='detalle-titulo-direccion'>
-                                {propiedad.direccion}
-                            </span>
-                        </div>
+                    <div className='cont-btns-direccion'>
+                            {/* btn-atrás */}
+                            <button
+                                onClick={() => handleClickAtras()}
+                                className='btn-volver'
+                                onMouseEnter={handleMouseEnterVolver}
+                                onMouseLeave={handleMouseLeaveVolver}
+                            >
+                                <ArrowBackIcon />
+                            </button>
+                            {/* msj toolTip */}
+                            {
+                                showTooltipVolver && <div className="tooltipVolver">{tooltipTextVolver}</div>
+                            }
+                            {/* dirección */}
+                            <div className='cont-titulo-icono-direcc'>
+                                <img src={IconoUbicacion} alt='' style={{ width: '40px', height: '40px' }} />
+                                <span className='detalle-titulo-direccion'>
+                                    {propiedad.direccion}
+                                </span>
+                            </div>
+                            {/* btn-video */}
+                            <button
+                                onClick={() => contexto.handleIsOpen()}
+                                className='btn-video'
+                                onMouseEnter={handleMouseEnter}
+                                onMouseLeave={handleMouseLeave}
+                            >
+                                <OndemandVideoIcon className='icono-video' />
+                            </button>
+                            {/* msj toolTip */}
+                            {
+                                showTooltipVideo && <div className="tooltip">{tooltipTextVideo}</div>
+                            }
                     </div>
                 </div>
 
@@ -200,9 +198,11 @@ function DetalleProp(){
                 </div>
 
                 {/* Modal Video */}
-                {
-                    contexto.isOpenModalVideo && <ModalVideo/>
-                }
+                
+                    {
+                        contexto.isOpenModalVideo && <ModalVideo />
+                    }
+                
             </div>
         </div>
     )

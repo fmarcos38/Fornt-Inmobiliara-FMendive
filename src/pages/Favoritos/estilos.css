@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color:chocolate;
+    background-color: var(--color-gris);
 }
 .cont-titulo-listaFav{
     width: 80%;

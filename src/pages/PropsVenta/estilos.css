@@ -3,13 +3,17 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: cadetblue;
+    background-color: var(--color-gris);
 }
-.cont-filtros-listaProps{
-    position: relative;
-    top: -35px;
+.titulo-pag-venta{
+    margin-top: 10px;
 }
-
+.cont-filtros-listaProps-venta{
+    display: flex;
+}
+.cont-btn-filtros{
+    margin-top: 5px;
+}
 @media screen and (max-width:700px){
     .cont-filtros-listaProps{
         position: relative;
