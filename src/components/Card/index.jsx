@@ -74,23 +74,29 @@ function Card({ id, codigoReferencia, direccionF, descripcion, disposicion, expe
                     <p className='info2'>{unidadMedida}</p>
                 </div>
 
-                <div className='div-info2'>
-                    <IconoAmb />                    
-                    <p className='info2'>Ambientes</p>
-                    <p className='info2'>{ambientes}</p>
-                </div>
+                {
+                    tipo.name !== "Terreno" && (
+                        <>
+                            <div className='div-info2'>
+                                <IconoAmb />
+                                <p className='info2'>Ambientes</p>
+                                <p className='info2'>{ambientes}</p>
+                            </div>
 
-                <div className='div-info2'>
-                    <IconoDormitorio />                    
-                    <p className='info2'>Dormitorios</p>
-                    <p className='info2'>{dormitorios}</p>
-                </div>
+                            <div className='div-info2'>
+                                <IconoDormitorio />
+                                <p className='info2'>Dormitorios</p>
+                                <p className='info2'>{dormitorios}</p>
+                            </div>
 
-                <div className='div-info2'>
-                    <DirectionsCarIcon sx={{ color: 'rgba(171, 132, 94, 1)', width:'28px', height:'28px' }}/>
-                    <p className='info2'>Cocheras</p>
-                    <p className='info2'>{cantCocheras}</p>
-                </div>
+                            <div className='div-info2'>
+                                <DirectionsCarIcon sx={{ color: 'rgba(171, 132, 94, 1)', width: '28px', height: '28px' }} />
+                                <p className='info2'>Cocheras</p>
+                                <p className='info2'>{cantCocheras}</p>
+                            </div>
+                        </>
+                    )
+                }
             </div>
         </div>
     )

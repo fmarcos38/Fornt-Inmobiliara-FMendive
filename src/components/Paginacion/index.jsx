@@ -1,10 +1,10 @@
 import React from 'react';
 import './estilos.css';
 
-function Paginacion({allProps,currentPage, onPageChange, totalPropiedades}) {
-
-    //total props / props por pag
-    const totalPaginas = Math.ceil(totalPropiedades / allProps.length);
+function Paginacion({ currentPage, onPageChange, totalPropiedades, propiedadesPorPagina }) {
+//console.log("propsXpag:", propiedadesPorPagina)
+    // Calcular el número total de páginas basado en el total de propiedades y propiedades por página
+    const totalPaginas = Math.ceil(totalPropiedades / propiedadesPorPagina);
 
     const handlePrevPage = () => {
         if (currentPage > 1) {
@@ -22,26 +22,25 @@ function Paginacion({allProps,currentPage, onPageChange, totalPropiedades}) {
         <div className="paginacion-container">
             <button
                 className="paginacion-button"
-                onClick={() => handlePrevPage(currentPage - 1)}
+                onClick={handlePrevPage}
                 disabled={currentPage === 1}
             >
                 Anterior
             </button>
 
             <span className="paginacion-info">
-            Página {currentPage} de {totalPaginas}
+                Página {currentPage} de {totalPaginas}
             </span>
 
             <button
                 className="paginacion-button"
-                onClick={() => handleNextPage(currentPage + 1)}
+                onClick={handleNextPage}
                 disabled={currentPage === totalPaginas}
             >
                 Siguiente
             </button>
         </div>
     );
-};
+}
 
-
-export default Paginacion
+export default Paginacion;

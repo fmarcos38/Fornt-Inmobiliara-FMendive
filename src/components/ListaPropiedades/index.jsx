@@ -1,7 +1,7 @@
 import React from 'react';
 import Card from '../Card';
-import './styles.css';
 import NoHayProps from '../NoHayProps';
+import './styles.css';
 
 function ListaPropiedades({allProps}) {
 
