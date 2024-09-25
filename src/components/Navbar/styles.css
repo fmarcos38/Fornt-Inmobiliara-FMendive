@@ -1,13 +1,13 @@
 nav {
-    /* position: fixed;
+    position: fixed;
     top: 0;
-    left: 0; */ /* si quiero nav fija */
+    left: 0; /* si quiero nav fija */
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 80px;
-    /* z-index: 1000; */
+    z-index: 1000;
     background-color: var(--color-negro-logo);
 }
 .cont-principal-nav{
@@ -18,18 +18,18 @@ nav {
 }
 /* cont logo */
 .cont-logo{
-    width: 20%;
+    width: 25%;
     height: 80px;
     display: flex;
     justify-content: center;    
     align-items: center;
 }
-.logo{
-    height: 3.5rem;
+.logo-nav{
+    height: 4rem;
 }
 /* cont barra sup e inf */
 .cont-nav-sup-inf{
-    width: 80%;
+    width: 75%;
     height: 80px;
     display: flex;
     flex-direction: column;
@@ -110,12 +110,11 @@ a, Link{
 }
 .menu-desplegable {
     position: absolute;
-    top: 80px;
+    top: 70px;
     right: 0;
-    background: rgb(41, 40, 40);
+    background: var(--color-negro-logo);
     width: auto;
     padding: 5px;
-    border-radius: 4px;
     overflow: hidden;
     transition: all 0.3s ease;
     z-index: 3;
@@ -137,13 +136,19 @@ a, Link{
 }
 .items-pChica{
     margin: 10px 0 10px 0;
-
 }
 
 /* responsive */
-@media screen and (max-width: 1077px) {
+@media screen and (max-width: 1260px) {
     .menu-icon {
         display: none;
+    }
+    /* cont logo */
+    .cont-logo{
+        width: 25%;
+    }
+    .logo-nav{
+        height: 3rem;
     }
     .texto-barra-sup{
         font-size: 15px;
@@ -162,15 +167,15 @@ a, Link{
     .menu-icon {
         display: none;
     }
-    .cont-principal-nav-sup-inf{
-        width: 95%;
+    .cont-principal-nav{
+        width: 99%;
     }
     /* cont logo */
     .cont-logo{
-        width: 25%;
+        width: 28%;
     }
-    .logo{
-        height: 2.5rem;
+    .cont-nav-sup-inf{
+        width: 72%;
     }
     .iconoContact{
         margin-left: 5px;
@@ -193,38 +198,7 @@ a, Link{
     }
     
 }
-@media screen and (max-width: 775px) {
-    .cont-principal-nav{
-        width: 95%;
-    }
-    .cont-principal-nav-sup-inf{
-        width: 95%;
-    }
-    /* cont logo */
-    .cont-logo{
-        width: 30%;
-    }
-    .logo{
-        height: 2rem;
-    }
-    .iconoContact{
-        margin-left: 3px;
-        margin-right: 3px;
-    }
-    .iconoInstaNew{
-        width: 25px;
-        height: 25px;
-    }
-    .texto-barra-sup{
-        font-size: 13px;
-    }
-    /* texto nav inf */
-    .ul-nav-inf > li {
-        font-size: 15px;
-    }
-    
-}
-@media screen and (max-width: 670px) {
+@media screen and (max-width: 840px) {
     /* cont logo */
     .cont-logo{
         width: 90%;
