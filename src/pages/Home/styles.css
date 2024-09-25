@@ -1,26 +1,179 @@
 .cont-home {
+  position: relative;
+  top: 80px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 100%;
   height: auto;
   margin: 0;
-  background-color: rgba(234, 231, 229, 1);
-  /* background-image: url('../../Imagenes/Texturas/Textura-05.jpg'); */
+  margin-bottom: 80px;
 }
-.cont-filtros-listaProps{
+.textos-home{
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  transition: top 0.3s ease-in-out; /* Transición suave */
+}
+/* para fijar las los textos */
+.fixed {
+  position: fixed;
+  top: 0; /* Fijo en la parte superior */
+  left: 0;
+  right: 0;
+  z-index: 10; /* Asegura que el texto esté por encima del fondo */
+}
+.cont-filtros-listaProps {
   width: 100%;
   display: flex;
   justify-content: center;
   margin-top: 100px;
+  height: auto; /* Asegúrate de que este contenedor pueda crecer */
 }
-.cont-barraL{  
-  width: 18%;
+/* barra lateral */
+.cont-barraL {
+  position: -webkit-sticky; /* Soporte para Safari */
+  position: sticky;
+  top: 80px; /* Ajusta este valor según la altura de la navbar */
+  z-index: 100;
+  align-self: flex-start; /* Para que la barra se mantenga alineada al principio */
 }
-.cont-listaProps{
-  width: 85%;
+/*  */
+.texto-somos{
+  font-size: 30px;
+  color: var(--primary-color);
+}
+.logoTexto{
+  height: 8rem;
+}
+.subCont-textos{
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 200px;
+}
+.texto-sup{
+  font-size: 25px;
+  margin-top: 80px;
+  color: var(--primary-color);
+}
+/* Botón contacto */
+.btn-contactanos-home{
+  margin-top: 40px;
+  width: 200px;
+  padding: 10px 8px;
+  border: 1px solid var(--primary-color);
+  border-radius: 20px;
+  font-size: 25px;
+  font-weight: 100;
+  color: var(--primary-color);
+  background-color: transparent;
+  cursor: pointer;
+  box-shadow: 0 0 0 0 rgba(52, 152, 219, 0.7);
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(52, 152, 219, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(52, 152, 219, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(52, 152, 219, 0);
+  }
 }
 
+.cont-texto-imagenes{
+  background-color: var(--color-negro-logo);
+}
+.cont-imgenes-fondo{
+  position: relative;
+  width: 100%;
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-negro-logo);
+  margin-top: 650px;
+}
+.cont-sup-img,
+.cont-inf-img {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cont-fondo-img {
+  width: 50%;
+  height: 100%;
+}
+.img-fondo {
+  width: 100%;
+  height: 100%;
+  
+}
+.cont-fondo-oscuro{
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: var(--color-negro-logo);
+}
+
+.cont-titulo-filtros-props{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 12;
+  background-color: rgba(234, 231, 229, 1);
+}
+.cont-filtros-listaProps {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  height: auto; /* Asegúrate de que este contenedor pueda crecer */
+}
+.cont-barraL {
+  position: -webkit-sticky; /* Soporte para Safari */
+  position: sticky;
+  top: 80px; /* Ajusta este valor según la altura de la navbar */
+  z-index: 100;
+  align-self: flex-start; /* Para que la barra se mantenga alineada al principio */
+}
+.cont-listaProps {
+  width: 85%;
+}
+.cont-titulo-conoce-propiedades{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.titulo-conoce-propiedades{
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: var(--primary-color);
+  background-color: var(--color-negro-logo);
+}
 @media screen and (max-width: 1200px){
   .cont-barraL{  
     width: 25%;
