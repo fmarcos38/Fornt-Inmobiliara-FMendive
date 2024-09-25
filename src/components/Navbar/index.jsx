@@ -23,7 +23,7 @@ function NavbarConRedes() {
                 <div className='cont-logo'>
                     {/* logo */}
                     <NavLink to='/' >
-                        <img src={Logo} alt='img not found' className='logo' />
+                        <img src={Logo} alt='img not found' className='logo-nav' />
                     </NavLink>
                 </div>
                 <div className='cont-nav-sup-inf'>
@@ -138,5 +138,8 @@ function NavbarConRedes() {
 }
 
 export default NavbarConRedes;
+
+
+
 
 
