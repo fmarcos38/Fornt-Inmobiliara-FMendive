@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import { Link } from 'react-router-dom';
 import IconoInstagram from '../../Imagenes/icononInstagram.png';
 import IconoWhatsApp from '../../Imagenes/iconoWhatsApp.png';
