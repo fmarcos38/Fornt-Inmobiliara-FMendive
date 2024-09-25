@@ -3,7 +3,8 @@
     position: fixed;
     bottom: 0; */ /*SI quiero q qde fija como pie de pag o en el view heigth*/
     /* left: 0; */
-    width: 100%;  
+    width: 100%;
+    height: auto;  
     display: flex;
     flex-direction: column;
     justify-content: center;  
@@ -148,5 +149,8 @@ footer ul li h2 {
         align-items: center;
     }
 } 
+
+
+
 
 
