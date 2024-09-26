@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import IconoUbicacion from '../../Imagenes/iconoUbicacion.png';
 import { NavLink } from 'react-router-dom';
+import IconoUbicacion from '../../Imagenes/iconoUbicacion.png';
 import Favorito from '../Favoritos';
 import IconoSup from '../../Imagenes/Iconos/IconoSup';
 import IconoAmb from '../../Imagenes/Iconos/IconoAmb';
@@ -32,7 +32,7 @@ function Card({ id, codigoReferencia, direccionF, descripcion, disposicion, expe
                 >
                     {/* imagen */}
                     <div className='card-image'>
-                        <img className='card-img' src={imagenes[0].original} alt='not found' />
+                        <img src={imagenes[0].original} alt='not found' className='card-img' />
                     </div>
 
                     {/* msj detalle si hay hover */}
@@ -61,7 +61,18 @@ function Card({ id, codigoReferencia, direccionF, descripcion, disposicion, expe
                         </p>
                     </div>
                     <div className='cont-fav'>
-                        <Favorito id={id} />
+                        <Favorito 
+                            id={id}
+                            direccionF={direccionF}
+                            cantCocheras={cantCocheras}
+                            operacion={operacion}
+                            imagenes={imagenes}
+                            tituloPublicacion={tituloPublicacion}
+                            ambientes={ambientes}
+                            dormitorios={dormitorios}
+                            unidadMedida={unidadMedida}
+                            tipo={tipo}
+                        />
                     </div>
                 </div>
             </div>

@@ -82,7 +82,11 @@ const FormularioContacto = ({ tituloPublicacion, codigoReferencia }) => {
 
     // Usamos useEffect para actualizar el mensaje cuando cambian tituloPublicacion y codigoReferencia
     useEffect(() => {
-        setMensaje(`Hola, quisiera saber más acerca de: Cod Ref: ${codigoReferencia}. ${tituloPublicacion}`);
+        if(!tituloPublicacion){
+            setMensaje(`Hola, me contactan por favor...gracias.`);
+        }else{
+            setMensaje(`Hola, quisiera saber más acerca de: Cod Ref: ${codigoReferencia}. ${tituloPublicacion}`);
+        }
     }, [tituloPublicacion, codigoReferencia]);
 
     useEffect(() => {

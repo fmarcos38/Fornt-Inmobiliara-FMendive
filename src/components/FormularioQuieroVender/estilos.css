@@ -1,0 +1,99 @@
+.cont-vender {
+    height: 100vh; /* O lo que sea necesario según tu diseño */
+    margin-bottom: 380px;
+}
+.header-vender {
+    width: 100%;
+    height: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../../Imagenes/bg-tasaciones.jpg');
+    background-size: cover;
+    background-position: center; /* Asegura que la imagen esté centrada */
+}
+.cont-tazacion {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.h2-tazacion {
+    font-size: 40px;
+    color: #fff;
+    text-align: center; /* Opcional, refuerza el centrado horizontal */
+}
+.cont-main{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.cont-titulo-main-form-vender{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.p-qres-vender{
+    font-size: 30px;
+    font-weight: 600;
+}
+.p-envianos{
+    font-size: 20px;
+    margin: 0;
+}
+.cont-form-vender{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+.form-vender{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.cont-nombre-form-vender {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    margin-bottom: 5px;
+}
+.label-form-vender {
+    margin-bottom: 4px;
+    font-size: 12px;
+    font-weight: 500;
+}
+.input-nombre-form-vender,
+.input-telefono-form-vender,
+.input-email-form-vender,
+.textarea-form-vender {
+    width: 100%;
+    height: 45px;
+    font-size: 18px;
+    box-shadow: none;
+    border: 1px solid #e0ecf5;
+    background-clip: initial;
+    border-radius: 10px;
+    padding: 5px;
+}
+.textarea-form-vender {
+    min-height: 150px;
+}
+.btn-form-vender{
+    width: 100%;
+    color: var(--primary-color);
+    background-color: var(--color-negro-logo);
+    padding: 5px;
+    font-size: 20px;
+    border-radius: 10px;
+}
