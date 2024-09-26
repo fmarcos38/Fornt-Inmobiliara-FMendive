@@ -1,33 +1,26 @@
-import React from 'react'
-import { useSelector } from 'react-redux';
-import ListaPropiedades from '../../components/ListaPropiedades';
+import React, {useEffect, useState} from 'react'
+import ListaFavoritos from '../../components/ListaFavoritos';
 import './estilos.css'
 
-function ListaFavoritos() {
-    let listaFav = JSON.parse(localStorage.getItem('favorites'));
-    const allProps = useSelector(state => state.propiedades);
-    let newArrayFav = [];
+function FavoritosPage() {
+    const [fav, setFav] = useState([]);
 
+    // Desplaza la página hacia la parte superior cuando el componente se monta
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []); // El array vacío asegura que se ejecute solo al montar el componente
 
-    //busca cada prop q tengo en Fav an el array de props global
-    for(let i =0; i<listaFav.length; i++){
-        for(let j=0; j<allProps.length; j++){
-            if(allProps[j].id === listaFav[i]){
-                newArrayFav.push(allProps[j]);
-            }
-        }
-    }
+    useEffect(()=>{
+        let listaFav = JSON.parse(localStorage.getItem('favorites')) || [];
+        setFav(listaFav);
+    },[]);
+
 
     return (
-        <div className='cont-gralFavoritos'>
-            <div className='cont-titulo-listaFav'>
-                <h1>Tus propiedades favoritas</h1>
-                <div className='cont-props-fav'>
-                    <ListaPropiedades allProps={newArrayFav} />
-                </div>
-            </div>
+        <div className='cont-page-favoritos'>
+            <ListaFavoritos allProps={fav} />            
         </div>
     )
 }
 
-export default ListaFavoritos
+export default FavoritosPage;

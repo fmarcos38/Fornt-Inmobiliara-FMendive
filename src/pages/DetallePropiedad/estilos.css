@@ -1,4 +1,6 @@
 .contGralDetalle{
+    position: relative;
+    top: 80px;
     width: 100%;
     height: auto;
     display: flex;
@@ -8,6 +10,7 @@
     /* background-image: url('../../Imagenes/Mar-Del-Plata.webp'); */
     /* background-size: cover; */ /* Hace que la imagen de fondo cubra todo el div */
     /* background-position: center; */
+    margin-bottom: 80px;
 }
 .cont-detail{
     width: 95%;
@@ -259,19 +262,6 @@
     color: var(--color-negro-logo);
     background-color: var(--color-gris);
 }
-/* .cont-modal-video{
-    width: 95%;
-    height: 90%;
-    position: absolute;
-    top: 80px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;  
-    background-color: black;
-    z-index: 5;
-} */
-
 /* responsive */
 @media screen and (max-width: 1300px){
     .info-1{

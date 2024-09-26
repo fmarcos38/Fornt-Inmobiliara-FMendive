@@ -1,22 +1,31 @@
 .cont-prop-Venta{
+    position: relative;
+    top: 80px;
+    width: 100%;
+    min-height: 90vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: var(--color-gris);
+    margin-bottom: 80px;
 }
-.titulo-pag-venta{
-    margin-top: 10px;
+.cont-titulo-conoce-propiedades{
+    font-size: 25px;
+    font-weight: 300;
+    margin: 0;
 }
 .cont-filtros-listaProps-venta{
     display: flex;
+    justify-content: center;
+    margin-top: 10px;
 }
-.cont-btn-filtros{
-    margin-top: 5px;
-}
+
 @media screen and (max-width:700px){
-    .cont-filtros-listaProps{
-        position: relative;
-        top: 0;
+    .cont-filtros-listaProps-venta{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 }

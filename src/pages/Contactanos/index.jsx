@@ -5,8 +5,10 @@ import './estilos.css';
 
 function Contactanos() {
     return (
-        <div className='contGralFormulario'>           
-            <FormularioContacto />            
+        <div className='contGralFormulario'> 
+            <div style={{width:'60%'}}>
+                <FormularioContacto />            
+            </div>
         </div>
     )
 }
