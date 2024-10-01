@@ -21,6 +21,7 @@ function FavoritosPage() {
             <ListaFavoritos allProps={fav} />            
         </div>
     )
+    
 }
 
 export default FavoritosPage;

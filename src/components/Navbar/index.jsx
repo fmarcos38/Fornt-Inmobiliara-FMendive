@@ -112,9 +112,9 @@ function NavbarConRedes() {
                                     <li className='items-pChica'>
                                         <Link to='/alquiler' className='link-navbar'>Alquiler</Link>
                                     </li>
-                                    <li className='items-pChica'>
+                                    {/* <li className='items-pChica'>
                                         <Link to='/alqTemp' className='link-navbar'>Alquiler Temporario</Link>
-                                    </li>
+                                    </li> */}
                                     <li className='items-pChica'>
                                         <Link to='/emprendimientos' className='link-navbar'>Emprendimientos</Link>
                                     </li>
