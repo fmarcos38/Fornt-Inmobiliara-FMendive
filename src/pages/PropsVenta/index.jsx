@@ -43,12 +43,10 @@ function PropsVenta() {
                     <div className='cont-prop-Venta'>
                         {/* contenedor filtros y lista props */}
                             <div className='cont-titulo-props-venta'>
-                            <div className='cont-titulo-conoce-propiedades'>
-                                <p className='titulo-props-venta'>Propiedades en Venta</p>
-                            </div>
+                            
 
                                 <div className='cont-filtros-listaProps-venta'>
-                                    <div className='cont-barraL'>
+                                    <div className='cont-barraL venta'>
                                         <BarraLateral
                                             muestraVentaAlq={'false'}
                                             limit={limit}  // Aquí pasamos el valor de limit al componente BarraLateral
@@ -60,6 +58,9 @@ function PropsVenta() {
                                     </div>
 
                                     <div className='cont-listaProps'>
+                                        <div className='cont-titulo-conoce-propiedades'>
+                                            <p className='titulo-props-venta'>Propiedades en Venta</p>
+                                        </div>
                                         <ListaPropiedades allProps={allProps} id='listaProps' />
                                         {
                                             allProps[0] &&

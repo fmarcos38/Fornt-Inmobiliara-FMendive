@@ -12,7 +12,8 @@
 
 }
 /* est. 1er div */
-.cont-titulo-filtro {
+.cont-titulo-filtro,
+.cont-titulo-filtro-Sin-muestrVentaAlq {
   height: 30px;
   display: flex;
   justify-content: center;
@@ -20,6 +21,10 @@
   padding: 8px;
   border-radius: 10px 10px 0 0;
   border-bottom: 2px solid var(--primary-color);
+}
+/* si la vista es Venta/Alq/Alq Temp. */
+.cont-titulo-filtro-Sin-muestrVentaAlq{
+  margin-bottom: 5px;
 }
 .titulo-filtros {
   width: 100%;
@@ -67,7 +72,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 .boton-filtros {
   width: 130px;

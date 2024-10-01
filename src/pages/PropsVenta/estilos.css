@@ -15,6 +15,9 @@
     font-weight: 300;
     margin: 0;
 }
+.venta{
+    margin-top: 60px
+}
 .cont-filtros-listaProps-venta{
     display: flex;
     justify-content: center;

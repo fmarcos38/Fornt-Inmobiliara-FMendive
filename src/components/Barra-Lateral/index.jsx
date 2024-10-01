@@ -38,7 +38,7 @@ const BarraLateral = ({ muestraVentaAlq, limit, offset, setCurrentPage, setOpera
 
     return (
         <div className='cont-barra'>
-            <div className='cont-titulo-filtro'>
+            <div className={muestraVentaAlq === 'true' ? 'cont-titulo-filtro' : 'cont-titulo-filtro-Sin-muestrVentaAlq'}>
                 <p className='titulo-filtros'>Filtros Propiedades</p>
             </div>
 
