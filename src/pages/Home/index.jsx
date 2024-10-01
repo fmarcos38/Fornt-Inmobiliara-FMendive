@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProps } from '../../Redux/Actions';
+import { Link } from 'react-router-dom';
 import ListaPropiedades from '../../components/ListaPropiedades';
 //import LandingPage from '../../components/LandingPage';
 import Landing2 from '../../components/Landing2';
@@ -12,7 +13,7 @@ import logoTexto from '../../Imagenes/logoTexto.png';
 import imgHome1 from '../../Imagenes/imgHome1.jpg';
 import imgHome2 from '../../Imagenes/imgHome2.jpg';
 import './styles.css';
-import { Link } from 'react-router-dom';
+
 
 function Home() {
     

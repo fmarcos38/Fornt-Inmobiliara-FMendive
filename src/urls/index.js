@@ -1,6 +1,6 @@
 //desarrollo
 const desarrollo = "http://localhost:3001";
 //producción
-const produccion = "";
+//const produccion = "";
 
 export const actual = desarrollo;

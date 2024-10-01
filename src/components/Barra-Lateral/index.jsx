@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { getProps, } from '../../Redux/Actions';
+import FiltraPrecio from '../FIltroRangoPrecio';
 import './estilos.css'; 
-/* import FiltraPrecio from '../FIltroRangoPrecio'; */
-
 
 const BarraLateral = ({ muestraVentaAlq, limit, offset, setCurrentPage, setOperacion, setTipoPropiedad }) => {
     const [operacion, setOperacio] = useState('');
+    //estado para filtro por precio - tipo prop
+    const [tipoP, setTipoP] = useState('todas');
     const dispatch = useDispatch();
 
     const handleFilterChange = (event) => {
@@ -20,7 +21,9 @@ const BarraLateral = ({ muestraVentaAlq, limit, offset, setCurrentPage, setOpera
         setCurrentPage(1);  // Reiniciar a la página 1
         const tipoPropiedad = e.target.id;
         setTipoPropiedad(tipoPropiedad);  // Pasamos el tipo de propiedad al estado de Home
-
+        //actualizo tipo prop PARA filtro por precio
+        setTipoP(tipoPropiedad);
+        
         // Asegurarnos de que limit nunca sea undefined
         if (limit) {
             dispatch(getProps(limit, 0, operacion, tipoPropiedad));  // Pasamos todos los parámetros necesarios
@@ -85,6 +88,10 @@ const BarraLateral = ({ muestraVentaAlq, limit, offset, setCurrentPage, setOpera
                 <button className='boton-filtros' id='Oficina' onClick={handleClick}>Oficinas</button>
                 <button className='boton-filtros' id='Cochera' onClick={handleClick}>Cocheras</button>
                 <button className='boton-filtros' id='todas' onClick={handleClick}>Todas</button>
+            </div>
+
+            <div>
+                <FiltraPrecio limit={limit} operacion={operacion} tipoPropiedad={tipoP}/>
             </div>
         </div>
     );

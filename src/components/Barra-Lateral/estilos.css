@@ -20,7 +20,6 @@
   padding: 8px;
   border-radius: 10px 10px 0 0;
   border-bottom: 2px solid var(--primary-color);
-  margin-bottom: 10px;
 }
 .titulo-filtros {
   width: 100%;
@@ -35,7 +34,7 @@
 .opc-venta-alq{
   width: 250px;
   align-items: center;
-  margin: 20px 0px 20px 0px;
+  margin: 10px 0px 10px 0px;
 }
 .cont-venta-alq{
   width: 95%;

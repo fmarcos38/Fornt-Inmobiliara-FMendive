@@ -32,16 +32,19 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: 100px;
+  align-items: center;
+  /* margin-top: 100px; */
   height: auto; /* Asegúrate de que este contenedor pueda crecer */
+  z-index: 100;
+  background-color: var(--color-gris);
 }
-/* barra lateral */
 .cont-barraL {
   position: -webkit-sticky; /* Soporte para Safari */
   position: sticky;
-  top: 80px; /* Ajusta este valor según la altura de la navbar */
+
+  margin-left: 5px;
+  margin-bottom: 90px;
   z-index: 100;
-  align-self: flex-start; /* Para que la barra se mantenga alineada al principio */
 }
 .texto-somos{
   font-size: 30px;
