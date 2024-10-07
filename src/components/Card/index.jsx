@@ -9,10 +9,7 @@ import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
 import { formatMoney } from '../../Helps';
 import './styles.css'
 
-function Card({ id, codigoReferencia, direccionF, descripcion, disposicion, expensas, geoLat, geoLong, cantPisos,
-        rentaTemporaria, destacadaEnWeb, baños, cantCocheras, ubicacion, operacion, imagenes, productor, tituloPublicacion,
-        supCubierta, ambientes, supSemiCub, dormitorios, unidadMedida, supTotal, tipo, supDescubierta, servicios 
-    }) {
+function Card({ id, direccionF, cantCocheras, operacion, imagenes, tituloPublicacion, ambientes, dormitorios, unidadMedida, tipo }) {
 
     //estado para el hover
     const [showDetail, setShowDetail] = useState(false);
