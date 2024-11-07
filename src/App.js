@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
-import './App.css';
+import { InmobiliariaProvider } from './Context';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Footbar from './components/Footbar';
@@ -10,9 +10,9 @@ import PropsAlquiler from './pages/PropsAlquiler';
 import Contactanos from './pages/Contactanos';
 import Nosotros from './pages/Nosotros';
 import ListaFavoritos from './pages/Favoritos';
-import { InmobiliariaProvider } from './Context';
 import ModalVideo from './components/ModalVideo';
 import Emprendimientos from './pages/Emprendimientos';
+import './App.css';
 
 function App() {
   return (

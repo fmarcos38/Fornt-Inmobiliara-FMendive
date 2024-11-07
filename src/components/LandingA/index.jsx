@@ -1,6 +1,6 @@
 import React  from 'react'
-import logo from '../../Imagenes/LogoHome.png';
 import { Link } from 'react-router-dom';
+import logo from '../../Imagenes/LogoHome.png';
 import './estilos.css';
 
 function LandingPage2() {

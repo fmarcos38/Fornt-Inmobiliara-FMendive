@@ -54,9 +54,6 @@ export const muestraDestacadas = (obj) => {
     }
 };
 
-
-
-
 //cierra Modal imagen prop
 export const isOpenModalPicture = () => {
     return function(dispatch){

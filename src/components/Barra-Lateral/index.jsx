@@ -1,40 +1,40 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { getProps, } from '../../Redux/Actions';
+import { getProps } from '../../Redux/Actions';
 import FiltraPrecio from '../FIltroRangoPrecio';
 import './estilos.css'; 
 
-const BarraLateral = ({ muestraVentaAlq, limit, offset, setCurrentPage, setOperacion, setTipoPropiedad }) => {
-    const [operacion, setOperacio] = useState('');
-    //estado para filtro por precio - tipo prop
+const BarraLateral = ({ muestraVentaAlq, limit, offset, setCurrentPage, setOperacion, setTipoPropiedad, soloAlq }) => {
+    const [operacion, setOperacio] = useState(''); 
     const [tipoP, setTipoP] = useState('todas');
     const dispatch = useDispatch();
 
+    // Asegurarse de que `setOperacion` en Home sea invocado cada vez que cambia el checkbox
     const handleFilterChange = (event) => {
         const { value } = event.target;
         const nuevaOperacion = value === operacion ? '' : value;
-        setOperacio(nuevaOperacion);
-        setOperacion(nuevaOperacion); // Actualizamos el estado "operacion" en el componente padre (Home)
+        setOperacio(nuevaOperacion); // Esto actualiza el estado local en BarraLateral
+        setOperacion(nuevaOperacion); // Esto actualiza el estado en Home
     };
 
+    // Actualizar `tipoPropiedad` en Home y `tipoP` en BarraLateral
     const handleClick = (e) => {
         setCurrentPage(1);  // Reiniciar a la página 1
         const tipoPropiedad = e.target.id;
-        setTipoPropiedad(tipoPropiedad);  // Pasamos el tipo de propiedad al estado de Home
-        //actualizo tipo prop PARA filtro por precio
-        setTipoP(tipoPropiedad);
-        
-        // Asegurarnos de que limit nunca sea undefined
+        setTipoPropiedad(tipoPropiedad);  // Actualiza tipoPropiedad en Home
+        setTipoP(tipoPropiedad);          // Actualiza el estado local para filtro en BarraLateral
+
+        // Dispatch `getProps` solo si `limit` tiene un valor
         if (limit) {
-            dispatch(getProps(limit, 0, operacion, tipoPropiedad));  // Pasamos todos los parámetros necesarios
+            dispatch(getProps(limit, 0, operacion, tipoPropiedad));  // Pasar todos los filtros
         }
     };
 
     useEffect(() => {
-        if (operacion !== '' && limit) {
-            dispatch(getProps(limit, offset, operacion));
+        if (limit) {
+            dispatch(getProps(limit, offset, operacion, tipoP));
         }
-    }, [dispatch, limit, offset, operacion]);
+    }, [dispatch, limit, offset, operacion, tipoP]); // Incluimos `tipoP` como dependencia
 
     return (
         <div className='cont-barra'>
@@ -68,14 +68,28 @@ const BarraLateral = ({ muestraVentaAlq, limit, offset, setCurrentPage, setOpera
                     <div className='cont-venta-alq'>
                         <label className='label-filtro-tipo-ope-Alq-Temp'>ALQUILER TEMPORAL</label>
                         <input
-                            id='Alquiler Temporal'
+                            id='Alquiler temporario'
                             type="checkbox"
-                            value="Alquiler Temporal"
-                            checked={operacion === "Alquiler Temporal"}
+                            value="Alquiler temporario"
+                            checked={operacion === "Alquiler temporario"}
                             onChange={handleFilterChange}
                             className='input-check-alq'
                         />
                     </div>
+                </div>
+            )}
+            
+            {soloAlq === 'true' && (
+                <div className='cont-venta-alq'>
+                    <label className='label-filtro-tipo-ope-Alq-Temp'>ALQUILER TEMPORAL</label>
+                    <input
+                        id='Alquiler Temporal'
+                        type="checkbox"
+                        value="Alquiler Temporal"
+                        checked={operacion === "Alquiler Temporal"}
+                        onChange={handleFilterChange}
+                        className='input-check-alq'
+                    />
                 </div>
             )}
 
