@@ -1,26 +1,33 @@
 import React from 'react';
-import './estilos.css'; // Archivo CSS para los estilos del mapa
+import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
 
-const MapProp = ({ lat, lng }) => {
+const MapProp = ({ geoLat, geoLong }) => {
 
-    //apikey google map
-    const apiKey = process.env.REACT_APP_API_GOOGLE_MAP;
+    const API_KEY = process.env.REACT_APP_API_GOOGLE_MAP;
 
-    // Función para generar la URL de Google Maps con las coordenadas proporcionadas
-    const generateMapUrl = () => {
-        const baseUrl = `https://www.google.com/maps/embed/v1/place?key=${apiKey}`;
-        return `${baseUrl}&q=${lat},${lng}&zoom=15`;
+    const { isLoaded } = useJsApiLoader({
+        googleMapsApiKey: API_KEY // Reemplaza con tu API Key de Google Maps
+    });
+
+    const center = {
+        lat: -38.0257007,
+        lng: -57.5616034
     };
 
+    console.log("Latitud:", center.lat, "Longitud:", center.lng); // Confirmar coordenadas
+
+    if (!isLoaded) return <div>Loading...</div>;
+
     return (
-        <div className="map-container">
-            <iframe
-                title="Map"
-                className="map"
-                src={generateMapUrl()}
-                allowFullScreen
-            ></iframe>
-        </div>
+        <GoogleMap
+            center={center}
+            zoom={15}
+            mapContainerStyle={{ width: '100%', height: '400px', position: 'relative' }}
+        >
+            <Marker
+                position={center}
+            />
+        </GoogleMap>
     );
 };
 

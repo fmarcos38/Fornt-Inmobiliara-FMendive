@@ -194,8 +194,8 @@ function DetalleProp(){
                 <div className='cont-map'>
                     <p className='p-titulo-mapa'>Ubicacion Propiedad</p>
                     <MapProp 
-                        lat={propiedad.geoLat} 
-                        lng= {propiedad.geoLong}
+                        geoLat={propiedad.geoLat} 
+                        geoLong= {propiedad.geoLong}
                     />
                 </div>
 
